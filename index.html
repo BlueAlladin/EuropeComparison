@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>欧洲多国生活与云服务生态多维度对比报告</title>
-  <meta name="description" content="一份针对欧洲主要国家的所得税、生活成本、法定假期、云服务生态、销售薪资、气候、社会安全及交通便利程度等多维度深度对比与智能匹配分析报告。">
+  <title>欧洲多国生活与数字能源生态多维度对比报告</title>
+  <meta name="description" content="一份针对欧洲 44 个主要国家的所得税、生活成本、法定假期、数字能源生态（光伏/储能BESS/充电桩/EMS）、销售薪资(OTE)、气候、社会安全及交通便利程度等多维度深度对比与智能匹配分析报告。">
   
   <!-- 网页浏览器 Tab 图标 (Favicon) -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238b5cf6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='10'></circle><line x1='2' y1='12' x2='22' y2='12'></line><path d='M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z'></path></svg>">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2310b981' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polygon points='13 2 3 14 12 14 11 22 21 10 12 10 13 2'></polygon></svg>">
   
   <!-- 引入字体与图标 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,21 +24,21 @@
     /* CSS 设计系统与变量 */
     :root {
       /* 颜色定义 - 默认暗黑模式 */
-      --bg-gradient: linear-gradient(135deg, #090810 0%, #110e25 50%, #07070d 100%);
-      --card-bg: rgba(25, 22, 45, 0.45);
+      --bg-gradient: linear-gradient(135deg, #06110d 0%, #0d221a 50%, #050c09 100%);
+      --card-bg: rgba(18, 38, 30, 0.45);
       --card-border: rgba(255, 255, 255, 0.08);
-      --card-hover-border: rgba(139, 92, 246, 0.4);
+      --card-hover-border: rgba(16, 185, 129, 0.4);
       --text-primary: #f3f4f6;
       --text-secondary: #9ca3af;
       --text-muted: #6b7280;
       
       /* 渐变色 */
-      --primary-gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+      --primary-gradient: linear-gradient(135deg, #10b981 0%, #059669 100%);
       --secondary-gradient: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
-      --accent-gradient: linear-gradient(135deg, #f97316 0%, #ef4444 100%);
-      --success-gradient: linear-gradient(135deg, #10b981 0%, #14b8a6 100%);
+      --accent-gradient: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
+      --success-gradient: linear-gradient(135deg, #10b981 0%, #34d399 100%);
       
-      --glow-color: rgba(139, 92, 246, 0.15);
+      --glow-color: rgba(16, 185, 129, 0.15);
       --accent-glow: rgba(6, 182, 212, 0.15);
       
       /* UI 变量 */
@@ -53,17 +53,16 @@
 
     /* 亮色模式变量覆盖 */
     [data-theme="light"] {
-      --bg-gradient: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
-      --card-bg: rgba(25, 25, 25, 0.03);
-      --card-bg: rgba(255, 255, 255, 0.8);
+      --bg-gradient: linear-gradient(135deg, #f0fdf4 0%, #e6f4ea 100%);
+      --card-bg: rgba(255, 255, 255, 0.85);
       --card-border: rgba(0, 0, 0, 0.06);
-      --card-hover-border: rgba(99, 102, 241, 0.3);
-      --text-primary: #1e293b;
-      --text-secondary: #475569;
-      --text-muted: #94a3b8;
+      --card-hover-border: rgba(16, 185, 129, 0.35);
+      --text-primary: #111827;
+      --text-secondary: #374151;
+      --text-muted: #6b7280;
       
-      --glow-color: rgba(99, 102, 241, 0.05);
-      --accent-glow: rgba(14, 165, 233, 0.05);
+      --glow-color: rgba(16, 185, 129, 0.08);
+      --accent-glow: rgba(14, 165, 233, 0.08);
       
       --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
       --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
@@ -123,7 +122,7 @@
       align-items: center;
       justify-content: center;
       color: white;
-      box-shadow: 0 4px 10px rgba(99, 102, 241, 0.3);
+      box-shadow: 0 4px 10px rgba(16, 185, 129, 0.3);
     }
 
     .logo-text h1 {
@@ -169,12 +168,12 @@
       border: 1px solid var(--card-border);
       display: flex;
       align-items: flex-end;
-      background: linear-gradient(135deg, #0c0a21 0%, #1b1642 50%, #060412 100%);
+      background: linear-gradient(135deg, #051a12 0%, #0d3826 50%, #04120c 100%);
       transition: var(--transition-base);
     }
 
     [data-theme="light"] .hero-banner {
-      background: linear-gradient(135deg, #eef2f6 0%, #dbeafe 50%, #eff6ff 100%);
+      background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 50%, #e6f4ea 100%);
     }
 
     .hero-canvas {
@@ -193,12 +192,12 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(180deg, rgba(9, 8, 16, 0.2) 0%, rgba(9, 8, 16, 0.85) 100%);
+      background: linear-gradient(180deg, rgba(6, 17, 13, 0.2) 0%, rgba(6, 17, 13, 0.88) 100%);
       z-index: 2;
     }
 
     [data-theme="light"] .hero-overlay {
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(241, 245, 249, 0.9) 100%);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(240, 253, 244, 0.9) 100%);
     }
 
     .hero-content {
@@ -221,7 +220,7 @@
       text-transform: uppercase;
       letter-spacing: 0.05em;
       margin-bottom: 0.75rem;
-      box-shadow: 0 4px 10px rgba(139, 92, 246, 0.2);
+      box-shadow: 0 4px 10px rgba(16, 185, 129, 0.2);
     }
 
     .hero-content h2 {
@@ -237,7 +236,7 @@
     .hero-content p {
       font-size: 1.05rem;
       color: var(--text-secondary);
-      max-width: 800px;
+      max-width: 850px;
     }
 
     /* 顶栏卡片概览 */
@@ -294,10 +293,10 @@
       flex-shrink: 0;
     }
 
-    .stat-icon.tax { background: var(--primary-gradient); }
-    .stat-icon.leave { background: var(--secondary-gradient); }
-    .stat-icon.weather { background: var(--accent-gradient); }
-    .stat-icon.sales { background: var(--success-gradient); }
+    .stat-icon.tax { background: var(--secondary-gradient); }
+    .stat-icon.leave { background: var(--accent-gradient); }
+    .stat-icon.weather { background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); }
+    .stat-icon.sales { background: var(--primary-gradient); }
 
     .stat-info .label {
       font-size: 0.85rem;
@@ -306,7 +305,7 @@
     }
 
     .stat-info .value {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       font-weight: 700;
       color: var(--text-primary);
       font-family: 'Outfit', sans-serif;
@@ -429,7 +428,7 @@
       background: var(--primary-gradient);
       color: white;
       border-color: transparent;
-      box-shadow: 0 4px 10px rgba(99, 102, 241, 0.2);
+      box-shadow: 0 4px 10px rgba(16, 185, 129, 0.2);
     }
 
     .country-info-card {
@@ -490,7 +489,7 @@
     }
 
     .detail-item-header-left i {
-      color: #8b5cf6;
+      color: #10b981;
     }
 
     .detail-item-value {
@@ -526,7 +525,7 @@
       width: 300px;
       height: 300px;
       border-radius: 50%;
-      background: var(--secondary-gradient);
+      background: var(--primary-gradient);
       opacity: 0.03;
       bottom: -150px;
       left: -150px;
@@ -569,7 +568,7 @@
     .slider-label-area .weight-val {
       font-family: 'Outfit', sans-serif;
       font-weight: 600;
-      color: #06b6d4;
+      color: #10b981;
     }
 
     .slider-input-wrapper {
@@ -600,7 +599,7 @@
       border-radius: 50%;
       background: var(--primary-gradient);
       cursor: pointer;
-      box-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+      box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
       transition: transform 0.1s;
     }
 
@@ -732,11 +731,11 @@
       padding-bottom: 12px;
       margin-bottom: 2rem;
       overflow-x: auto;
-      scrollbar-width: none; /* Firefox */
+      scrollbar-width: none;
     }
 
     .tab-nav::-webkit-scrollbar {
-      display: none; /* Chrome/Safari */
+      display: none;
     }
 
     .tab-btn {
@@ -767,7 +766,7 @@
     .tab-btn.active {
       background: var(--primary-gradient);
       color: white;
-      box-shadow: 0 4px 10px rgba(99, 102, 241, 0.2);
+      box-shadow: 0 4px 10px rgba(16, 185, 129, 0.2);
     }
 
     .tab-pane {
@@ -925,7 +924,7 @@
     }
 
     th.active-sort {
-      color: #8b5cf6;
+      color: #10b981;
     }
 
     th i {
@@ -987,13 +986,17 @@
       background: rgba(0, 0, 0, 0.06);
     }
 
-    .badge.brand-aws { background: rgba(255, 153, 0, 0.15); color: #ff9900; }
-    .badge.brand-azure { background: rgba(0, 137, 214, 0.15); color: #0089d6; }
-    .badge.brand-gcp { background: rgba(66, 133, 244, 0.15); color: #4285f4; }
-    .badge.brand-oracle { background: rgba(240, 12, 14, 0.15); color: #f00c0e; }
-    .badge.brand-ibm { background: rgba(0, 102, 255, 0.15); color: #0066ff; }
-    .badge.brand-hetzner { background: rgba(214, 18, 36, 0.15); color: #d61224; }
-    .badge.brand-local { background: rgba(139, 92, 246, 0.15); color: #a78bfa; }
+    .badge.brand-huawei { background: rgba(235, 11, 29, 0.15); color: #eb0b1d; }
+    .badge.brand-sungrow { background: rgba(245, 130, 32, 0.15); color: #f58220; }
+    .badge.brand-siemens { background: rgba(0, 153, 153, 0.15); color: #009999; }
+    .badge.brand-schneider { background: rgba(61, 205, 88, 0.15); color: #3cd158; }
+    .badge.brand-sma { background: rgba(230, 0, 18, 0.15); color: #e60012; }
+    .badge.brand-abb { background: rgba(255, 0, 0, 0.15); color: #ff0000; }
+    .badge.brand-alfen { background: rgba(0, 102, 204, 0.15); color: #0066cc; }
+    .badge.brand-byd { background: rgba(198, 25, 31, 0.15); color: #c6191f; }
+    .badge.brand-tesla { background: rgba(227, 25, 55, 0.15); color: #e31937; }
+    .badge.brand-solaredge { background: rgba(189, 30, 45, 0.15); color: #bd1e2d; }
+    .badge.brand-local { background: rgba(16, 185, 129, 0.15); color: #34d399; }
 
     /* 页脚 */
     footer {
@@ -1016,12 +1019,12 @@
     }
 
     ::-webkit-scrollbar-thumb {
-      background: rgba(139, 92, 246, 0.2);
+      background: rgba(16, 185, 129, 0.2);
       border-radius: 4px;
     }
 
     ::-webkit-scrollbar-thumb:hover {
-      background: rgba(139, 92, 246, 0.4);
+      background: rgba(16, 185, 129, 0.4);
     }
   </style>
 </head>
@@ -1032,11 +1035,11 @@
     <header>
       <div class="logo-area">
         <div class="logo-icon">
-          <i data-lucide="globe"></i>
+          <i data-lucide="zap"></i>
         </div>
         <div class="logo-text">
-          <h1>欧洲工作与云服务生态多维度对比</h1>
-          <p>所得税 • 年假 • 生活成本 • 云厂商 • 销售薪资 • 天气治安交通</p>
+          <h1>欧洲工作与数字能源生态多维度对比</h1>
+          <p>所得税 • 年假 • 生活成本 • 数字能源厂商 • 销售薪资(OTE) • 气候治安交通</p>
         </div>
       </div>
       <button class="theme-toggle-btn" id="themeToggle" title="切换主题">
@@ -1050,10 +1053,10 @@
       <div class="hero-overlay"></div>
       <div class="hero-content">
         <span class="hero-badge">
-          <i data-lucide="sparkles" style="width: 14px; height: 14px;"></i> 2026年深度对比报告
+          <i data-lucide="sparkles" style="width: 14px; height: 14px;"></i> 2026年数字能源(CleanTech)行业对比报告
         </span>
-        <h2>探索欧洲各国的工作与生活</h2>
-        <p>结合本地生存指标与云服务技术市场分布，深度拆解在各国的云销售岗位薪酬、税负、假期与综合幸福度，帮您找到理想的落脚点。</p>
+        <h2>探索欧洲数字能源销售的工作与生活</h2>
+        <p>结合本地生存指标与欧洲光伏、储能(BESS)、EV充电桩及EMS软件市场分布，深度拆解各国的数字能源销售岗位薪水、税负、假期与综合幸福度。</p>
       </div>
     </div>
 
@@ -1066,7 +1069,7 @@
         <div class="stat-info">
           <p class="label">所得税最低</p>
           <p class="value">罗马尼亚 (10%)</p>
-          <p class="desc">扁平单一税率，中东欧高科技开发与交付中心</p>
+          <p class="desc">扁平单一税率，中东欧高科技交付与后勤中心</p>
         </div>
       </div>
       <div class="stat-card">
@@ -1086,7 +1089,7 @@
         <div class="stat-info">
           <p class="label">年度日照最高</p>
           <p class="value">希腊 (2900小时/年)</p>
-          <p class="desc">地中海明媚气候，海岛度假与户外生活首选</p>
+          <p class="desc">地中海明媚气候，海岛光伏与微电网快速增长</p>
         </div>
       </div>
       <div class="stat-card">
@@ -1094,9 +1097,9 @@
           <i data-lucide="trending-up"></i>
         </div>
         <div class="stat-info">
-          <p class="label">云销售均薪最高</p>
-          <p class="value">瑞士 (€190,000 OTE)</p>
-          <p class="desc">购买力强劲，西欧金融核心数据主权市场</p>
+          <p class="label">数字能源销售均薪最高</p>
+          <p class="value">瑞士 (€185,000 OTE)</p>
+          <p class="desc">德/英/瑞领跑欧洲，储能(BESS)大客户销售提成极高</p>
         </div>
       </div>
     </div>
@@ -1107,7 +1110,7 @@
       <div class="dashboard-panel">
         <div class="panel-header">
           <h3>
-            <i data-lucide="line-chart" style="color: #8b5cf6;"></i>
+            <i data-lucide="line-chart" style="color: #10b981;"></i>
             多维度量化对比雷达图
           </h3>
           <div class="country-compare-selectors">
@@ -1141,12 +1144,12 @@
 
     <!-- 移居目的地智能推荐系统 (Simulator) -->
     <div class="simulator-section">
-      <h2 style="font-size: 1.5rem; background: var(--secondary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: flex; align-items: center; gap: 10px;">
-        <i data-lucide="sliders" style="color: #06b6d4;"></i>
+      <h2 style="font-size: 1.5rem; background: var(--primary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: flex; align-items: center; gap: 10px;">
+        <i data-lucide="sliders" style="color: #10b981;"></i>
         移居目的地智能匹配系统
       </h2>
       <p style="color: var(--text-secondary); margin-top: 0.5rem; font-size: 0.95rem;">
-        拉动滑块设置您最看重的维度权重（0-不重要，5-最看重）。系统将基于各国的实际量化指标，实时为您计算最适合您的欧洲移居目的地。
+        拉动滑块设置您最看重的维度权重（0-不重要，5-最看重）。系统将基于各国的实际量化指标，实时为您计算最适合您的欧洲数字能源销售目的地。
       </p>
       
       <div class="simulator-grid">
@@ -1182,7 +1185,7 @@
           </div>
           <div class="slider-group">
             <div class="slider-label-area">
-              <span>高薪资偏好 (云销售OTE)</span>
+              <span>高薪资偏好 (数字能源销售OTE)</span>
               <span class="weight-val" id="w_salary_val">4</span>
             </div>
             <div class="slider-input-wrapper">
@@ -1255,7 +1258,7 @@
           <i data-lucide="percent" style="width: 15px; height: 15px;"></i>所得税与法定假
         </button>
         <button class="tab-btn" onclick="switchTab(1)">
-          <i data-lucide="cloud" style="width: 15px; height: 15px;"></i>云厂商与销售薪资
+          <i data-lucide="zap" style="width: 15px; height: 15px;"></i>数字能源厂商与销售薪资
         </button>
         <button class="tab-btn" onclick="switchTab(2)">
           <i data-lucide="shield" style="width: 15px; height: 15px;"></i>物价水平与安全
@@ -1273,7 +1276,7 @@
         <div class="tab-grid-content" id="tabGrid-0"></div>
       </div>
 
-      <!-- Tab 1: 云与薪资 -->
+      <!-- Tab 1: 数字能源与薪资 -->
       <div class="tab-pane" id="tabPane-1">
         <div class="tab-grid-content" id="tabGrid-1"></div>
       </div>
@@ -1298,7 +1301,7 @@
     <div class="table-section">
       <div class="table-controls">
         <h2 style="font-size: 1.5rem; display: flex; align-items: center; gap: 8px;">
-          <i data-lucide="table-2" style="color: #8b5cf6;"></i>
+          <i data-lucide="table-2" style="color: #10b981;"></i>
           全维度对比矩阵表格
         </h2>
         <div class="search-input-wrapper">
@@ -1315,8 +1318,8 @@
               <th onclick="sortTable(1)">综合所得税率 <i data-lucide="chevrons-up-down"></i></th>
               <th onclick="sortTable(2)">生活成本指数 <i data-lucide="chevrons-up-down"></i></th>
               <th onclick="sortTable(3)">法定/标准假期 <i data-lucide="chevrons-up-down"></i></th>
-              <th>云服务厂商分布</th>
-              <th onclick="sortTable(5)">云销售年均薪 (OTE) <i data-lucide="chevrons-up-down"></i></th>
+              <th>数字能源主流厂商</th>
+              <th onclick="sortTable(5)">数字能源销售年均薪 (OTE) <i data-lucide="chevrons-up-down"></i></th>
               <th onclick="sortTable(6)">平均日照 & 雨季 <i data-lucide="chevrons-up-down"></i></th>
               <th onclick="sortTable(7)">社会安全指数 <i data-lucide="chevrons-up-down"></i></th>
               <th onclick="sortTable(8)">交通便利度 <i data-lucide="chevrons-up-down"></i></th>
@@ -1333,52 +1336,56 @@
 
     <!-- 页脚 -->
     <footer>
-      <p>© 2026 欧洲国家对比分析报告. 数据均源自行业研究报告、Numbeo及云厂商公开招股信息估算，仅供参考。</p>
+      <p>© 2026 欧洲国家数字能源(Digital Energy)行业对比分析报告. 数据源自欧洲能源协会、Wood Mackenzie、SolarPower Europe及公开招股信息估算，仅供参考。</p>
       <p style="margin-top: 5px;">基于 HTML5 / CSS3 / Chart.js 构建</p>
     </footer>
 
   </div>
 
   <script>
-    // 渲染云厂商 Badge 的辅助函数
+    // 渲染数字能源厂商 Badge 的辅助函数
     function getCloudBadge(p, extraStyle = "") {
       let brandClass = 'brand-local';
-      const pUpper = p.toUpperCase();
-      if (pUpper === 'AWS') brandClass = 'brand-aws';
-      else if (pUpper === 'AZURE') brandClass = 'brand-azure';
-      else if (pUpper === 'GCP') brandClass = 'brand-gcp';
-      else if (pUpper === 'ORACLE') brandClass = 'brand-oracle';
-      else if (pUpper === 'IBM') brandClass = 'brand-ibm';
-      else if (pUpper === 'HETZNER') brandClass = 'brand-hetzner';
+      const pLower = p.toLowerCase();
+      if (pLower.includes('huawei')) brandClass = 'brand-huawei';
+      else if (pLower.includes('sungrow')) brandClass = 'brand-sungrow';
+      else if (pLower.includes('siemens')) brandClass = 'brand-siemens';
+      else if (pLower.includes('schneider')) brandClass = 'brand-schneider';
+      else if (pLower.includes('sma')) brandClass = 'brand-sma';
+      else if (pLower.includes('abb')) brandClass = 'brand-abb';
+      else if (pLower.includes('alfen')) brandClass = 'brand-alfen';
+      else if (pLower.includes('byd')) brandClass = 'brand-byd';
+      else if (pLower.includes('tesla')) brandClass = 'brand-tesla';
+      else if (pLower.includes('solaredge')) brandClass = 'brand-solaredge';
       const styleAttr = extraStyle ? ` style="${extraStyle}"` : '';
       return `<span class="badge ${brandClass}"${styleAttr}>${p}</span>`;
     }
 
-    // 数据模型 (包含欧洲全部44个主权国家)
+    // 数据模型 (包含欧洲全部44个主权国家 - 数字能源版)
     const countryData = [
       {
         id: "germany", name: "德国", enName: "Germany", taxRate: 38.5,
         taxDetail: "实行累进税率（14%-45%），附加团结附加税。单身社保及税负偏高，但家庭税率（Ehegattensplitting）有优惠。",
-        costOfLiving: 65, costDetail: "约 €1,800 - €2,500/月（慕尼黑/柏林等大城市房租较贵）。日常消费中等偏上。",
+        costOfLiving: 65, costDetail: "约 €1,800 - €2,500/月（慕尼黑/法兰克福等大城市房租较贵）。日常消费中等偏上。",
         annualLeave: 30, leaveDetail: "法定最低20天（5天工作制），但企业普遍提供28-30天带薪年假，另有约10-14天公共假期。",
-        cloudProviders: ["AWS", "Azure", "GCP", "Oracle", "IBM", "Hetzner", "Ionos", "T-Systems"],
-        cloudDetail: "欧洲数据主权核心区。三大云在法兰克福均有大规模Region，Oracle与IBM亦设大型可用区，本地高性价比商Hetzner极其流行，本土云如Ionos与德电云分立其间。",
-        salesSalary: 150000, salaryDetail: "中高级销售（AE）平均OTE约 12-18万欧元，通常为50:50或60:40（底薪:提成）比例。",
+        cloudProviders: ["Huawei", "Sungrow", "Siemens", "SMA Solar", "Schneider", "BYD", "Tesla Energy"],
+        cloudDetail: "欧洲数字能源与光储充绝对中心。慕尼黑与法兰克福汇聚中资与欧资总部，大储能(BESS)与工商业光伏极其火爆，大客户/渠道销售需求极大。",
+        salesSalary: 155000, salaryDetail: "高级销售/BD经理平均OTE约 12-18万欧元，底薪与绩效比例常为 60:40，大型BESS储能项目提成极为可观。",
         weatherTemp: 9.0, weatherSun: 1600, weatherRain: 130,
         weatherDetail: "温带海洋性向大陆性过渡气候。夏季凉爽宜人（20-30°C），冬季寒冷阴暗（-5到5°C），降水分布均匀。",
         safetyIndex: 62.0, safetyDetail: "社会治安整体良好，犯罪率低。慕尼黑等南部城市极安全，部分大城市特定街区需注意防盗。",
         transportIndex: 85, transportDetail: "拥有发达的高铁（ICE）和密集的区域铁路网，高速公路不限速。法兰克福机场是欧洲核心航空枢纽。",
-        englishProficiency: 72, englishDetail: "职场英语普及率高，但政府机构（如落户局、税务局）官方信件只支持德语，日常生活仍需一定德语基础。",
-        youthCommunity: 80, youthDetail: "柏林和慕尼黑拥有庞大的年轻外籍人才与跨国科技社群，周末社交活动极为频繁且国际化。"
+        englishProficiency: 72, englishDetail: "外企与新能源行业职场英语普及率极高，但政府机构（如落户局、税务局）信件需德语基础。",
+        youthCommunity: 80, youthDetail: "柏林和慕尼黑拥有庞大的年轻外籍人才与跨国科技/绿能社群，周末社交活动极为频繁且国际化。"
       },
       {
         id: "uk", name: "英国", enName: "United Kingdom", taxRate: 32.0,
         taxDetail: "所得税率分 20%, 40%, 45% 三档。另需缴纳国民保险（NI）。伦敦等地区有额外的市政税（Council Tax）。",
         costOfLiving: 68, costDetail: "约 €2,200 - €3,000/月（伦敦房租及生活成本极高，其他城市相对亲民）。",
-        annualLeave: 28, leaveDetail: "法定带薪年假为28天（通常包含8天公共假期）。科技公司常提供额外3-5天福利假。",
-        cloudProviders: ["AWS", "Azure", "GCP", "Oracle", "IBM"],
-        cloudDetail: "欧洲最大的公有云及AI市场。三大云厂商在伦敦均设有多个可用区，科技生态极度活跃。",
-        salesSalary: 165000, salaryDetail: "伦敦云销售AE年薪常领跑欧洲，平均 OTE 达 13-19万欧元。美资背景云厂商提成空间巨大。",
+        annualLeave: 28, leaveDetail: "法定带薪年假为28天（通常包含8天公共假期）。科技与能源公司常提供额外3-5天福利假。",
+        cloudProviders: ["Huawei", "Sungrow", "Tesla Energy", "Siemens", "Fluence", "Schneider"],
+        cloudDetail: "电网级大储能(BESS)与虚拟电厂(VPP)商业化成熟度冠绝欧洲。伦敦与中部科技走廊销售极其看重电力套利与软件销售能力。",
+        salesSalary: 160000, salaryDetail: "伦敦大客户销售AE/BD年薪领跑欧洲，平均 OTE 达 13-19万欧元。美资与中资背景能源厂商提成空间巨大。",
         weatherTemp: 10.0, weatherSun: 1400, weatherRain: 150,
         weatherDetail: "典型的温带海洋性气候。终年温和潮湿，多雨雾，夏季温和（15-25°C），冬季少严寒。",
         safetyIndex: 53.0, safetyDetail: "治安状况中等。小偷小摸较常见，伦敦等大城市部分区域夜间治安需留心。乡村和中小城镇非常安全。",
@@ -1391,14 +1398,14 @@
         taxDetail: "个人所得税累进税率最高达45%。但社会分摊金比例极高。家庭申报（Quotient Familial）可大幅减税。",
         costOfLiving: 67, costDetail: "约 €2,000 - €2,700/月（巴黎房租极贵，南法及二线城市生活成本较为适中）。",
         annualLeave: 30, leaveDetail: "法定年假25天。因实行每周35小时工作制，超出工时通常可换取RTT（带薪休假），实际年休假多达30-35天。",
-        cloudProviders: ["AWS", "Azure", "GCP", "Oracle", "IBM", "OVHcloud", "Scaleway"],
-        cloudDetail: "重视数据自主，三大厂商及Oracle、IBM在巴黎及马赛建有Region。OVHcloud和Scaleway是欧陆领先的本土公有云代表。",
+        cloudProviders: ["Schneider", "Siemens", "Huawei", "Sungrow", "TotalEnergies", "EDF"],
+        cloudDetail: "电气与能源巨头大本营(施耐德/Total)。注重核能与分布式光伏、储能补能结合，法语与大客户政府关系极其看重。",
         salesSalary: 135000, salaryDetail: "平均OTE在 11-16万欧元。法国劳动法对员工保护力度极强，底薪比例通常较高（常为60:40）。",
         weatherTemp: 12.0, weatherSun: 2000, weatherRain: 110,
         weatherDetail: "气候类型多样。北部为海洋性，南部为地中海气候，阳光充足。南部夏季炎热，全国冬季普遍温和。",
         safetyIndex: 45.0, safetyDetail: "社会治安挑战较大。大城市（巴黎、马赛）盗窃和抢劫发生率相对较高，治安状况受社会运动影响明显。",
         transportIndex: 88, transportDetail: "TGV高速铁路系统极其优秀，时速达320公里。巴黎地铁极其密集。戴高乐机场是欧洲第二大航空港。",
-        englishProficiency: 55, englishDetail: "日常生活及政府事务（如办理医疗卡、房屋补贴）极度依赖法语，纯英语生活会有较大壁垒和局外感。",
+        englishProficiency: 55, englishDetail: "日常生活及政府事务极度依赖法语，跨国外企内部可用英语，但法语好是项目谈单的重要加分项。",
         youthCommunity: 85, youthDetail: "巴黎艺术和科技人才聚集，但社交活动通常需要一定的法语社交圈支撑，纯英文圈相对集中于外企。"
       },
       {
@@ -1406,8 +1413,8 @@
         taxDetail: "税率主要分为两档：36.97% 和 49.5%。符合条件的外籍高技术移民可享受30%的免税额度（30% Ruling）。",
         costOfLiving: 71, costDetail: "约 €2,200 - €2,800/月。阿姆斯特丹面临严重的房源短缺，租房成本高昂。",
         annualLeave: 25, leaveDetail: "法定最低20天，行业标准普遍为25天。许多公司提供额外的“个人发展日”或购买假期的福利。",
-        cloudProviders: ["AWS", "Azure", "GCP", "Oracle", "IBM", "Leaseweb"],
-        cloudDetail: "欧洲数据中心的十字路口。三大云、Oracle与IBM在阿姆斯特丹周边建有海量可用区，本土巨头Leaseweb网络实力雄厚，延迟极低。",
+        cloudProviders: ["Alfen", "EVBox", "Huawei", "Sungrow", "Schneider", "Tesla Energy"],
+        cloudDetail: "欧洲电动车充电桩与新能源交易枢纽。拥有Alfen与Shell Recharge总部，纯英文职场体验极佳，销售覆盖全欧市场。",
         salesSalary: 145000, salaryDetail: "平均OTE在 12-17万欧元。英语普及率极高，作为欧洲总部基地的销售往往负责多国市场（EMEA/Nordics）。",
         weatherTemp: 10.0, weatherSun: 1600, weatherRain: 180,
         weatherDetail: "温带海洋性气候。终年多风多雨，天气变化极快。夏季温和（18-25°C），冬季阴冷但极少降雪。",
@@ -1420,40 +1427,40 @@
         id: "ireland", name: "爱尔兰", enName: "Ireland", taxRate: 28.0,
         taxDetail: "所得税率有 20% 和 40% 两档。另需缴纳USC（环球社会税）和PRSI（社保）。相比西欧其他国家，综合税负略低。",
         costOfLiving: 75, costDetail: "约 €2,300 - €3,000/月。都柏林房租贵绝欧洲，生活杂费和餐饮价格也偏高。",
-        annualLeave: 20, leaveDetail: "法定年假20天。科技巨头（如Google/Meta）通常提供25-30天带薪年假，另有10天公共假期。",
-        cloudProviders: ["AWS", "Azure", "GCP", "Oracle", "IBM"],
-        cloudDetail: "欧洲公有云之都。三大云、Oracle与IBM等美资巨头的欧洲总部均在此，都柏林拥有全欧最密集的云数据中心群与销售运营中心。",
-        salesSalary: 140000, salaryDetail: "平均OTE在 11-16万欧元。都柏林是欧洲云销售跳槽 and 晋升的中心，聚集了海量跨国销售人才。",
+        annualLeave: 20, leaveDetail: "法定年假20天。科技与绿能巨头通常提供25-30天带薪年假，另有10天公共假期。",
+        cloudProviders: ["Siemens", "Schneider", "Huawei", "Sungrow", "Eaton"],
+        cloudDetail: "数据中心绿色能源与风电/储能枢纽。各大跨国能源与微电网软件公司 EMEA 商务中心聚集于都柏林。",
+        salesSalary: 140000, salaryDetail: "平均OTE在 11-16万欧元。都柏林是欧洲绿能与数字销售跳槽 and 晋升的中心，聚集了海量跨国销售人才。",
         weatherTemp: 9.5, weatherSun: 1200, weatherRain: 200,
         weatherDetail: "典型的温合湿润海洋气候。全年轻微降雨频繁（一年有近200天降雨），极少极端气温，阳光较为稀缺。",
         safetyIndex: 54.0, safetyDetail: "治安状况良好。都柏林市中心部分区域入夜后偶有青少年滋事，总体上暴力犯罪率很低。",
         transportIndex: 70, transportDetail: "都白林机场航班密集，飞往美洲及欧洲大陆极方便。但国内公共交通相对单一，主要依赖巴士和轻轨（Luas）。",
         englishProficiency: 100, englishDetail: "英语母语国家，行政、医疗、日常生活无语言障碍，入籍和长居也无任何语言考试限制。",
-        youthCommunity: 88, youthDetail: "都柏林作为欧洲硅谷，聚集了海量跨国科技公司的年轻雇员，酒吧与社交文化非常繁荣且易融入。"
+        youthCommunity: 88, youthDetail: "都柏林作为欧洲硅谷，聚集了海量跨国公司的年轻雇员，酒吧与社交文化非常繁荣且易融入。"
       },
       {
         id: "switzerland", name: "瑞士", enName: "Switzerland", taxRate: 18.0,
         taxDetail: "所得税由联邦、州及市镇三级征收。苏黎世/楚格等州税率极低。综合税负仅为15-25%，全欧最低之一。",
         costOfLiving: 110, costDetail: "约 €3,500 - €4,500/月。物价极高，房租、医疗保险、餐饮及日常消费水平冠绝全球。",
         annualLeave: 20, leaveDetail: "法定年假20天（4周）。许多雇主为30岁以上或高级员工提供25-30天假期，社会公共假期约9-15天。",
-        cloudProviders: ["AWS", "Azure", "GCP", "Oracle", "Swisscom"],
-        cloudDetail: "高度重视金融数据主权。三大云与Oracle均在苏黎世建有合规Region。本土电信巨头Swisscom主打高安全混合云服务。",
-        salesSalary: 190000, salaryDetail: "薪资水准欧洲顶尖。中高级销售OTE常达 16-22万等值欧元，购买力极强，但工作签证获取难度极大。",
+        cloudProviders: ["ABB", "Siemens", "Schneider", "Huawei", "SMA Solar"],
+        cloudDetail: "ABB等高端电力电子巨头总部所在。高精度微电网、水电储能与高品质工商业数字能源市场，销售薪资极其惊人。",
+        salesSalary: 185000, salaryDetail: "薪资水准欧洲顶尖。中高级销售/BD经理OTE常达 15-22万等值欧元，购买力极强，但工作签证获取难度极大。",
         weatherTemp: 9.0, weatherSun: 1700, weatherRain: 130,
         weatherDetail: "受阿尔卑斯山影响，气候多变。夏季温暖干燥，冬季寒冷多雪，山区是滑雪胜地，城市气候相对温和。",
         safetyIndex: 79.0, safetyDetail: "全球最安全的国家之一。犯罪率极低，社会秩序井然，甚至有夜不闭户的传统，安全感无可挑剔。",
         transportIndex: 95, transportDetail: "交通系统世界第一。SBB火车极其精准、干净且频次高，可以无缝连接任何偏远山区。苏黎世机场极其高效。",
         englishProficiency: 70, englishDetail: "多语种国家。跨国企业职场通用英语，但日常落户、政府信件及租房依然极度依赖当地语种（德/法）。",
-        youthCommunity: 75, youthDetail: "苏黎世和日内瓦聚集了金融与科技精英，但社交圈偏内敛，社交活动多为小圈子或户外登山俱乐部。"
+        youthCommunity: 75, youthDetail: "苏黎世和日内瓦聚集了金融与绿能技术精英，但社交圈偏内敛，社交活动多为小圈子或户外登山俱乐部。"
       },
       {
         id: "spain", name: "西班牙", enName: "Spain", taxRate: 26.0,
         taxDetail: "累进税率，最高税率为47%。但符合条件的科技人才可申请“贝克汉姆法案”（Beckham Law），享受24%的固定税率。",
         costOfLiving: 50, costDetail: "约 €1,200 - €1,800/月。餐饮、租房和生活娱乐性价比极高，在西欧国家中物价非常亲民。",
         annualLeave: 22, leaveDetail: "法定年假为30个自然日（约22个工作日）。另有约14天全国及地方公共假期，休假文化盛行。",
-        cloudProviders: ["AWS", "Azure", "GCP", "Oracle"],
-        cloudDetail: "云厂商争夺的新兴热土。三大云及Oracle近年相继在马德里/阿拉贡建立新Region与多可用区，主打南欧和拉美连接。",
-        salesSalary: 95000, salaryDetail: "平均OTE在 7-11万欧元。虽然绝对薪资低于德英，但结合低生活成本，实际生活质量和储蓄率非常可观。",
+        cloudProviders: ["Huawei", "Sungrow", "GoodWe", "Siemens", "Tesla Energy", "SolarEdge"],
+        cloudDetail: "欧洲光照第一大国，大储能(BESS)与地面大光伏爆发热土。马德里与巴塞罗那中资与欧资新能源销售团队极度活跃。",
+        salesSalary: 105000, salaryDetail: "平均OTE在 8-12万欧元。虽然绝对薪资低于德英，但结合低生活成本，实际生活质量和储蓄率非常可观。",
         weatherTemp: 16.0, weatherSun: 2800, weatherRain: 60,
         weatherDetail: "典型的地中海气候。阳光极其充足（年日照近3000小时），夏季炎热干燥，冬季温暖湿润，非常宜居。",
         safetyIndex: 64.0, safetyDetail: "非常安全。恶性犯罪极少，居民友善。巴塞罗那等旅游热门城市的小偷和扒手较多，需注意随身财物。",
@@ -1466,9 +1473,9 @@
         taxDetail: "主要为地方市政税（约32%），超过起征点需加征20%国家所得税。高税收伴随极其完善的“从摇篮到坟墓”福利。",
         costOfLiving: 65, costDetail: "约 €1,800 - €2,400/月。斯德哥尔摩租房市场为排队制，找房有一定难度，整体消费偏高。",
         annualLeave: 25, leaveDetail: "法定最少25个工作日。瑞典拥有极为慷慨的480天带薪育儿假（由父母双方共享），夏休假（7月）文化深入人心。",
-        cloudProviders: ["AWS", "Azure", "GCP", "Oracle"],
-        cloudDetail: "北欧绿色云枢纽。依托低成本水电，AWS、Azure和Oracle均在此建有绿色Region，服务整个北欧及波罗的海市场。",
-        salesSalary: 110000, salaryDetail: "平均OTE在 9-13万欧元。瑞典社会崇尚平权（Jantelagen），贫富差距小，销售提成比例相对保守，重在保障。",
+        cloudProviders: ["ABB", "Vattenfall", "Huawei", "Sungrow", "Schneider"],
+        cloudDetail: "北欧清洁电网与绿能科技枢纽。电池制造(Northvolt)与电网级储能极其强劲，销售重在顾问式与绿色可持续理念。",
+        salesSalary: 120000, salaryDetail: "平均OTE在 9.5-14万欧元。瑞典社会崇尚平权（Jantelagen），贫富差距小，销售提成比例相对保守，重在保障。",
         weatherTemp: 6.0, weatherSun: 1800, weatherRain: 160,
         weatherDetail: "温带大陆性/亚寒带气候。冬季漫长寒冷、白天极短（斯德哥尔摩仅6小时日照），夏季凉爽宜人、白昼漫长。",
         safetyIndex: 52.0, safetyDetail: "社会治安总体良好。近年来大城市特定区域有帮派冲突问题，但对普通居民和游客的日常生活基本无影响。",
@@ -1481,9 +1488,9 @@
         taxDetail: "个人所得税（IRPEF）实行累进税率（23%-43%），另有地方附加税。高净值人士可申请海外收入固定包税额政策。",
         costOfLiving: 58, costDetail: "约 €1,500 - €2,200/月（米兰和罗马房租及生活费较高，南部物价极其亲民）。",
         annualLeave: 26, leaveDetail: "法定最低20天带薪年假加4天工作缩减假（ROL），多数行业雇主提供26-30天实际带薪假期。",
-        cloudProviders: ["AWS", "Azure", "GCP", "Oracle"],
-        cloudDetail: "云厂商竞相布局。AWS、微软Azure、谷歌云及Oracle均在米兰开设了独立Region，主推金融与制造数字化转型。",
-        salesSalary: 90000, salaryDetail: "平均OTE在 7.5-10.5万欧元。大型云销售主要集中在米兰，且意大利本地传统企业数字化转型需求旺盛。",
+        cloudProviders: ["Enel Green", "Huawei", "Sungrow", "Schneider", "Siemens", "BYD"],
+        cloudDetail: "南欧光伏与户用/工商业储能超级大国。Superbonus政策后储能需求持续高位，米兰与罗马大客户销售收益丰厚。",
+        salesSalary: 98000, salaryDetail: "平均OTE在 8-11.5万欧元。大型新能源销售主要集中在米兰，且意大利本地传统工厂与公用事业数字化转型旺盛。",
         weatherTemp: 14.5, weatherSun: 2200, weatherRain: 80,
         weatherDetail: "典型的地中海气候。夏季炎热干燥，冬季温和湿润。中南部阳光充足，北部冬季气温偏低。",
         safetyIndex: 54.0, safetyDetail: "社会安全状况整体良好。但在旅游胜地（如罗马、米兰、那不勒斯）的小偷、骗子等扒窃问题较突出。",
@@ -1496,9 +1503,9 @@
         taxDetail: "所得税率高达50%，综合税负位列欧洲之首。不过社保福利极佳，部分公司提供免税的公司车和燃油卡补贴。",
         costOfLiving: 67, costDetail: "约 €1,800 - €2,500/月。布鲁塞尔租房成本在欧洲首都中较为适中，日常消费和超市物价较高。",
         annualLeave: 25, leaveDetail: "法定最低20天。大中型企业通常实行每周38/40小时工时，超额工时可换取额外带薪假（RTT），实际假期多达25-30天。",
-        cloudProviders: ["AWS", "Azure", "GCP"],
-        cloudDetail: "作为欧洲心脏，三大云厂商在布鲁塞尔均建有Region或点对点连接，GCP在圣吉兰建有欧洲最大绿色数据中心之一。",
-        salesSalary: 120000, salaryDetail: "平均OTE约 10-14万欧元。布鲁塞尔聚集了大量面向欧盟机构的科技销售代表，英语和双语能力是核心竞争优势。",
+        cloudProviders: ["Schneider", "Siemens", "Huawei", "Sungrow", "Alfen"],
+        cloudDetail: "欧盟能源政策与港口微电网枢纽。布鲁塞尔聚集大量面向欧盟绿能补贴政策与公用事业的大客户销售代表。",
+        salesSalary: 125000, salaryDetail: "平均OTE约 10-14.5万欧元。布鲁塞尔聚集了大量面向欧盟机构的科技与绿能销售代表，英语和双语能力是核心优势。",
         weatherTemp: 10.5, weatherSun: 1500, weatherRain: 190,
         weatherDetail: "温带海洋性气候。终年阴湿多雨（年均近190天降雨），夏季凉爽（18-24°C），冬季温和阴暗。",
         safetyIndex: 52.0, safetyDetail: "整体治安良好。布鲁塞尔特定区域夜间犯罪率稍高，日常出行需警惕小偷小摸。",
@@ -1511,9 +1518,9 @@
         taxDetail: "实行七级个人所得税率，最高可达55%。虽然税负较重，但公共福利、育儿和医疗保障体系极其优越。",
         costOfLiving: 65, costDetail: "约 €1,600 - €2,300/月。维也纳常年蝉联全球“最宜居城市”，其市政租房保障体制使得房租成本显著低于西欧同类大城市。",
         annualLeave: 25, leaveDetail: "法定带薪假期为25天。工作满25年后可自动增加至30天。此外奥地利还享有13个全国法定公共节日。",
-        cloudProviders: ["AWS", "Azure", "GCP"],
-        cloudDetail: "云生态与德国高度协同。三大厂商相继在维也纳周边规划或建设新的云可用区，以服务中欧企业。",
-        salesSalary: 125000, salaryDetail: "中高级云销售AE的平均OTE约 10-15万欧元。维也纳也是进军东欧和中欧市场（DACH+CEE）的业务总枢纽。",
+        cloudProviders: ["Fronius", "Siemens", "Schneider", "Huawei", "Sungrow"],
+        cloudDetail: "本土拥有Fronius等顶级逆变器巨头。山地光伏、水力储能与工商业微电网发达，与德国DACH区高度协同。",
+        salesSalary: 130000, salaryDetail: "中高级数字能源销售/BD平均OTE约 10-15万欧元。维也纳也是进军中东欧市场的业务总枢纽。",
         weatherTemp: 9.5, weatherSun: 1800, weatherRain: 120,
         weatherDetail: "温带大陆性向山地过渡气候。夏季炎热多阳光（25-33°C），冬季寒冷干燥且降雪量大，滑雪季长达数月。",
         safetyIndex: 73.0, safetyDetail: "社会治安极其出色。在国际安全指数中长期名列前茅，大城市和村庄均非常和平稳定。",
@@ -1526,9 +1533,9 @@
         taxDetail: "所得税率高，但几乎不收社保分摊金。外籍顶尖专家可申请27%的优惠固定税率。",
         costOfLiving: 78, costDetail: "约 €2,000 - €2,800/月。物价昂贵，餐饮、日常服务和房租开销大，哥本哈根住房压力较大。",
         annualLeave: 25, leaveDetail: "法定年假25天。北欧特有的休假文化显著，7月份绝大部分企业停工休长假，注重工作与生活的平衡（Hygge）。",
-        cloudProviders: ["AWS", "Azure", "GCP"],
-        cloudDetail: "云厂商的北欧桥头堡。Azure已在丹麦建立专属 Region，AWS也在哥本哈根布局了先进的网络节点和本地加速服务。",
-        salesSalary: 130000, salaryDetail: "年薪高，AE平均OTE约 11-15万欧元。由于平权文化，固定底薪比例常占到60%以上，提成相对稳定。",
+        cloudProviders: ["Vestas", "Danfoss", "Siemens", "Huawei", "Sungrow"],
+        cloudDetail: "全球风电与绿能技术先驱（Vestas/Danfoss）。海上风电协同储能与智能电网管理销售需求稳健。",
+        salesSalary: 135000, salaryDetail: "年薪高，AE/BD平均OTE约 11-15.5万欧元。由于平权文化，固定底薪比例常占到60%以上，提成相对稳定。",
         weatherTemp: 8.5, weatherSun: 1700, weatherRain: 160,
         weatherDetail: "温带海洋性气候。多风多雨，夏无酷暑（18-22°C），冬无严寒，但冬季白昼短、日照稀缺。",
         safetyIndex: 74.0, safetyDetail: "治安状况卓越。人民互信度高，社会福利极其公平，犯罪率和腐败指数在全球范围内都是最低之一。",
@@ -1541,9 +1548,9 @@
         taxDetail: "实行累进税率，最高综合税率约47%。但高收入者需要额外缴纳财富税。综合税率结合石油基金福利有较好的保底作用。",
         costOfLiving: 82, costDetail: "约 €2,200 - €3,200/月。欧洲物价最昂贵的国家之一，酒类、外出餐饮和交通出行花费惊人。",
         annualLeave: 25, leaveDetail: "法定带薪假25天。挪威社会极为尊重员工休假权，许多家庭在夏季有两至三周的山区或海边小木屋度假传统。",
-        cloudProviders: ["AWS", "Azure", "GCP"],
-        cloudDetail: "北欧最大的挪威国家电网提供大量低碳水利电力。Azure挪威Region已经正式投入使用，AWS也通过低延迟连接服务挪威政企。",
-        salesSalary: 135000, salaryDetail: "AE平均OTE约为 11.5-16.5万欧元。当地薪酬体系透明，销售更偏向顾问式，而不是激进的提成路线。",
+        cloudProviders: ["Statkraft", "Huawei", "ABB", "Siemens", "EVBox"],
+        cloudDetail: "全球电动车渗透率第一国！充换电网络、船运电动化与水电储能数字管理极度成熟，销售待遇优厚。",
+        salesSalary: 140000, salaryDetail: "AE平均OTE约为 11.5-16.5万欧元。当地薪酬体系透明，销售更偏向顾问式，而不是激进的提成路线。",
         weatherTemp: 5.0, weatherSun: 1600, weatherRain: 180,
         weatherDetail: "西海岸受暖流影响较温和，但内陆和北部为严寒气候。夏季风景极美，户外徒步探险资源极其丰富。",
         safetyIndex: 68.0, safetyDetail: "非常安全的和平国度。犯罪率低，治安隐患主要是大城市特定区域的小规模偷盗行为。",
@@ -1556,9 +1563,9 @@
         taxDetail: "所得税实行累进税率，最高可达56%。福利系统强大，包含全民免费高等教育和卓越的公共医疗。",
         costOfLiving: 68, costDetail: "约 €1,800 - €2,500/月。日常食品和住房成本较高，相比挪威和瑞士略为便宜。",
         annualLeave: 25, leaveDetail: "法定带薪假25天。芬兰人特别崇尚夏休，7月份赫尔辛基市中心常规企业大面积停工，工作生活平衡指数极高。",
-        cloudProviders: ["AWS", "Azure", "GCP", "Hetzner"],
-        cloudDetail: "公有云数据中心的重要选址地。谷歌云建有大型海水冷数据中心，本土高性价比厂商Hetzner在赫尔辛基拥有其北欧最大云基地。",
-        salesSalary: 115000, salaryDetail: "平均OTE在 9.5-13.5万欧元。芬兰企业数字化成熟度极高，销售人员以技术功底扎实和诚实守信著称。",
+        cloudProviders: ["Wärtsilä", "ABB", "Huawei", "Sungrow", "Siemens"],
+        cloudDetail: "本土拥有Wärtsilä等大储能与灵活能源巨头。数据中心余热回收与极地绿能储能销售技术门槛高。",
+        salesSalary: 120000, salaryDetail: "平均OTE在 9.5-13.5万欧元。芬兰企业数字化成熟度极高，销售人员以技术功底扎实和诚实守信著称。",
         weatherTemp: 5.5, weatherSun: 1700, weatherRain: 150,
         weatherDetail: "亚寒带气候。冬季漫长多雪（零下5到15度），极夜特征明显；夏季温和明亮（18-25度），极昼特征显著。",
         safetyIndex: 72.0, safetyDetail: "常年被评为世界最安全和最幸福的国家。夜间独自出行安全感极高，社会犯罪率保持极低水平。",
@@ -1568,27 +1575,27 @@
       },
       {
         id: "poland", name: "波兰", enName: "Poland", taxRate: 22.0,
-        taxDetail: "税收政策灵活。除普通的累进税率外，IT和高管常通过单人企业（B2B）享受19%甚至更低的所得税优惠。",
+        taxDetail: "税收政策灵活。除普通的累进税率外，IT与绿能高管常通过单人企业（B2B）享受19%甚至更低的所得税优惠。",
         costOfLiving: 42, costDetail: "约 €1,000 - €1,600/月。华沙和克拉科夫的房租比西欧同类大城市低 30-50%，生活成本非常低廉。",
         annualLeave: 26, leaveDetail: "法定年假20或26天。外企往往在此基础上提供额外的福利假期。",
-        cloudProviders: ["AWS", "Azure", "GCP", "Oracle"],
-        cloudDetail: "中东欧的开发与云核心。谷歌云、微软Azure与Oracle均在华沙开设了全功能Region，作为辐射东欧的桥头堡。",
-        salesSalary: 65000, salaryDetail: "平均OTE在 5.5-8万欧元。虽然底薪低于西欧，但由于波兰生活成本低、税率可控，本地销售的实际可支配资产比例很高。",
+        cloudProviders: ["Huawei", "Sungrow", "GoodWe", "Deye", "Schneider"],
+        cloudDetail: "中东欧光伏与热泵/储能爆发之王！华沙聚集了大量面向东欧和波罗的海的新能源渠道与大客户销售。",
+        salesSalary: 75000, salaryDetail: "平均OTE在 6-9万欧元。虽然底薪低于西欧，但由于波兰生活成本低、税率可控，本地销售的实际可支配资产比例很高。",
         weatherTemp: 8.5, weatherSun: 1600, weatherRain: 140,
         weatherDetail: "温带大陆性气候。冬季寒冷阴沉，经常降雪；夏季阳光明媚，温度可达25-32°C，春季和秋季短暂。",
         safetyIndex: 67.0, safetyDetail: "社会治安优良。波兰近年来暴力犯罪率极低，日常治安在欧洲名列前茅，走在华沙和克拉科夫街头非常有安全感。",
         transportIndex: 75, transportDetail: "国内快速铁路发展迅速，连接各大中心城市。肖邦国际机场飞往欧洲各大城市的廉航航线极其丰富。",
-        englishProficiency: 68, englishDetail: "IT和外企等高知行业英文普及度高，但日常行政（如移民局居留卡办理）通常仅接受波兰语文书，日常沟通需波兰语辅助。",
-        youthCommunity: 76, youthDetail: "华沙和克拉科夫外包与研发中心云集，年轻的跨国科技白领很多，酒吧和低消费娱乐社交极为红火。"
+        englishProficiency: 68, englishDetail: "IT和新能源外企行业英文普及度高，但日常行政（如移民局居留卡办理）通常仅接受波兰语文书。",
+        youthCommunity: 76, youthDetail: "华沙和克拉科夫外包与研发中心云集，年轻的跨国科技/绿能白领很多，酒吧和低消费娱乐社交极为红火。"
       },
       {
         id: "portugal", name: "葡萄牙", enName: "Portugal", taxRate: 28.0,
         taxDetail: "常规税率累进达48%。针对数码游民和专业人才，曾有非习惯居民（NHR）税收优惠方案（享20%固定税率）。",
         costOfLiving: 46, costDetail: "约 €1,100 - €1,700/月。性价比极高，日常餐饮和红酒消费在全欧最划算，里斯本租房成本有所上涨。",
         annualLeave: 22, leaveDetail: "法定年假22个工作日。另有约13个全国公共假日。休假氛围非常轻松，夏日全家海边度假极为盛行。",
-        cloudProviders: ["AWS", "Azure", "GCP"],
-        cloudDetail: "三大云厂商在葡萄牙建有网络加速点，虽然核心Region仍在西班牙，但许多南欧技术团队选择在里斯本和波尔图办公。",
-        salesSalary: 60000, salaryDetail: "平均OTE约 5-7.5万欧元。虽然葡萄牙本土薪资水平偏低，但吸引了大量跨国科技公司在此设立EMEA远程销售团队。",
+        cloudProviders: ["EDP Renewables", "Huawei", "Sungrow", "Siemens"],
+        cloudDetail: "地中海光伏与海上绿氢前沿基地。里斯本吸引大量跨国新能源企业设立EMEA远程数字能源销售团队。",
+        salesSalary: 68000, salaryDetail: "平均OTE约 5.5-8.5万欧元。虽然葡萄牙本土薪资水平偏低，但吸引了大量跨国科技/能源公司在此设立EMEA远程团队。",
         weatherTemp: 16.5, weatherSun: 2800, weatherRain: 80,
         weatherDetail: "地中海气候。全欧洲气候最优秀的国家之一。夏季阳光充足但有海风不至于闷热，冬季非常温暖（10-18°C）。",
         safetyIndex: 69.0, safetyDetail: "全球安全指数排名前列。国民性格温和谦逊，社会极度和平，极少发生恶性刑事案件，是家庭移居首选。",
@@ -1600,10 +1607,10 @@
         id: "czech", name: "捷克", enName: "Czechia", taxRate: 23.0,
         taxDetail: "所得税率分为15% and 23%两档。企业还可以选择针对自由职业者的包税制。税收及行政流程正在逐步数字化。",
         costOfLiving: 46, costDetail: "约 €1,200 - €1,800/月。日常食品和餐饮性价比很高，布拉格租房成本受总部效应和旅游业影响上升明显。",
-        annualLeave: 20, leaveDetail: "法定最低20天。不过，大多数本地跨国IT企业和外企将25天（5周）列为招聘的标准员工福利。",
-        cloudProviders: ["AWS", "Azure", "GCP", "Oracle", "IBM"],
-        cloudDetail: "地处欧洲中心。三大云、Oracle与IBM在布拉格和布尔诺均有大型技术研发和客户中心，服务强大的制造和汽车工业云化。",
-        salesSalary: 70000, salaryDetail: "平均OTE约 6-8.5万欧元。布拉格是大量科技巨头在中东欧区域的总部基地，销售岗位多为区域管理角色。",
+        annualLeave: 20, leaveDetail: "法定最低20天。不过，大多数本地跨国IT与工业企业将25天（5周）列为招聘的标准员工福利。",
+        cloudProviders: ["Siemens", "Schneider", "Huawei", "Sungrow", "CEZ Group"],
+        cloudDetail: "中东欧工业能源转型重镇。车企工厂自动化与分布式工商业储能需求旺盛，布拉格为区域销售中心。",
+        salesSalary: 78000, salaryDetail: "平均OTE约 6.5-9.5万欧元。布拉格是大量工业与科技巨头在中东欧区域的总部基地，销售岗位多为区域管理角色。",
         weatherTemp: 9.0, weatherSun: 1600, weatherRain: 130,
         weatherDetail: "温带大陆性气候。冬季寒冷干燥（零下5到5度），夏季温和舒适，偶有雷雨，秋季风光非常美丽。",
         safetyIndex: 72.0, safetyDetail: "全球治安最佳目的地之一。犯罪率在全欧洲名列前茅地低，公共场所和夜间出行的安全度无可挑剔。",
@@ -1616,9 +1623,9 @@
         taxDetail: "常规税率累进最高达44%。近年希腊极力吸引海外高技术人才及数码游民，符合条件者可享受50%的个人税额减免。",
         costOfLiving: 52, costDetail: "约 €1,100 - €1,600/月。日常食品极其新鲜且便宜，雅典房租开销相对西欧而言非常低，海岛物价有季节性。",
         annualLeave: 20, leaveDetail: "法定年假20个工作日。另有约14天法定公共节假日，希腊休假氛围浓厚，几乎所有人都会在8月前往海岛度假。",
-        cloudProviders: ["AWS", "Azure", "GCP"],
-        cloudDetail: "南欧技术新星。微软已宣布在雅典建立大型数据中心群，AWS和谷歌云也在近年落地了本地分支与区域加速点。",
-        salesSalary: 55000, salaryDetail: "平均OTE约 4.5-6.5万欧元。主要销售机会面向本地航运、旅游及房地产数字化转型。",
+        cloudProviders: ["Huawei", "Sungrow", "MYTILINEOS", "Tesla Energy"],
+        cloudDetail: "希腊阳光丰沛，海岛微电网与地面大光伏/储能项目井喷，雅典数字能源BD销售岗位快速增加。",
+        salesSalary: 62000, salaryDetail: "平均OTE约 5-7.5万欧元。主要销售机会面向地中海地面大光伏、海岛储能及房地产绿能改造。",
         weatherTemp: 18.0, weatherSun: 2900, weatherRain: 50,
         weatherDetail: "典型的地中海气候。阳光无比明媚（年均近2900小时日照），夏季炎热（30-40°C），冬季非常温暖湿润（8-15°C）。",
         safetyIndex: 56.0, safetyDetail: "社会秩序整体稳定。暴力犯罪极罕见，雅典部分老街区偶有小偷或涂鸦滋事，日常注意保管财物即可。",
@@ -1631,9 +1638,9 @@
         taxDetail: "所得税为15%扁平单一税率，是全欧洲最低的国家之一。但27%的增值税（VAT）位居全欧第一高。",
         costOfLiving: 42, costDetail: "约 €1,000 - €1,500/月。在欧洲属于高性价比国家，布达佩斯租房和日常消费的开销非常友好。",
         annualLeave: 20, leaveDetail: "法定年假基数为20天，随着年龄的增长逐渐增加（如45岁以上可获得30天年假）。对家庭育儿还有额外假期奖励。",
-        cloudProviders: ["AWS", "Azure", "GCP"],
-        cloudDetail: "主要作为区域服务中心。三大云厂商在布达佩斯建立有技术和支持团队，网络低延迟直达西欧各大核心节点。",
-        salesSalary: 50000, salaryDetail: "平均OTE约 4-6.5万欧元。薪水以福林（HUF）或欧元结算。扁平税率和低物价带来很高的生活性价比。",
+        cloudProviders: ["CATL", "BYD", "Huawei", "Sungrow", "Siemens"],
+        cloudDetail: "欧洲动力电池制造中心（宁德时代/比亚迪巨型工厂）。工业配电与储能数字管理销售潜力巨大。",
+        salesSalary: 58000, salaryDetail: "平均OTE约 4.5-7万欧元。薪水以福林（HUF）或欧元结算。扁平税率和低物价带来很高的生活性价比。",
         weatherTemp: 10.5, weatherSun: 1900, weatherRain: 110,
         weatherDetail: "温带大陆性气候。四季分明，夏季炎热多阳光，冬季寒冷。春秋两季气温变化快，降水较平稳。",
         safetyIndex: 62.0, safetyDetail: "中东欧治安表现出色。整体非常宁静安全，布达佩斯夜间走动无安全顾虑，犯罪率始终处于极低水平。",
@@ -1643,17 +1650,17 @@
       },
       {
         id: "romania", name: "罗马尼亚", enName: "Romania", taxRate: 10.0,
-        taxDetail: "所得税为10%扁平单一税率，IT行业从业人员曾长期享受个人所得税豁免政策。综合个人税率极具吸引力。",
+        taxDetail: "所得税为10%扁平单一税率，IT与科技从业人员享受极低税负。综合个人税率极具吸引力。",
         costOfLiving: 38, costDetail: "约 €800 - €1,300/月。全欧洲生活成本最低的国家之一，宽带网速和网络性价比更是高居全球前列。",
-        annualLeave: 21, leaveDetail: "法定最低年假为21天。通常外企 and 大型外包技术公司会根据员工的年资或资历增加到25天。",
-        cloudProviders: ["AWS", "Azure", "GCP"],
-        cloudDetail: "欧洲著名的技术外包和离岸开发中心。AWS和Azure在布加勒斯特设有极具规模的工程师中心，提供云架构和技术支持。",
-        salesSalary: 55000, salaryDetail: "平均OTE在 4.5-6.5万欧元。由于多语种人才密集，罗马尼亚人常常负责面向南欧或德法语区的云销售支持。",
+        annualLeave: 21, leaveDetail: "法定最低年假为21天。通常外企与新能源大厂会根据员工的年资或资历增加到25天。",
+        cloudProviders: ["Huawei", "Sungrow", "Schneider", "Siemens"],
+        cloudDetail: "黑海及东南欧最大光伏/风电与储能市场之一。罗马尼亚多语种销售团队常负责南欧多国销售。",
+        salesSalary: 60000, salaryDetail: "平均OTE在 4.5-7.5万欧元。由于多语种人才密集，罗马尼亚人常常负责面向南欧或德法语区的客户支持与销售。",
         weatherTemp: 10.0, weatherSun: 2000, weatherRain: 100,
         weatherDetail: "温带大陆性气候。冬季寒冷多雪（零下10度常见），夏季炎热（30-35度），山区和黑海沿岸温差明显。",
         safetyIndex: 70.0, safetyDetail: "出乎意料地安全。罗马尼亚暴力犯罪极少，小偷也是零星存在，日常社区环境非常和平稳健。",
         transportIndex: 65, transportDetail: "布加勒斯特地铁网络较好。铁路网里程长但设备老化，行车速度普遍较慢。公路网高速公路在不断建设中。",
-        englishProficiency: 62, englishDetail: "IT白领英文极其流利，但公立医院、政府税收等社会基层行政服务仍以罗马尼亚语为主，日常办事有一定语言门槛。",
+        englishProficiency: 62, englishDetail: "外企白领英文极其流利，但公立医院、政府税收等社会基层行政服务仍以罗马尼亚语为主。",
         youthCommunity: 70, youthDetail: "布加勒斯特作为低成本外包交付中心，汇聚了大量跨国公司的年轻技术团队，娱乐性社交性价比极高。"
       },
       {
@@ -1661,40 +1668,39 @@
         taxDetail: "累进所得税最高达42%。若联合申报，其家庭边际税率可以降得非常低。社保极优厚，家庭友好度极高。",
         costOfLiving: 80, costDetail: "约 €2,500 - €3,500/月。房租开销极大。日常餐饮和超市物价在欧洲均属最贵梯队。",
         annualLeave: 26, leaveDetail: "法定带薪假26天。此外，卢森堡人工作压力相对温和，重视假日质量，国家保障体系极健全。",
-        cloudProviders: ["AWS", "Azure", "GCP"],
-        cloudDetail: "作为欧盟机构的集中地，卢森堡对金融及政府云有严格的主权数据隔离和高合规要求，三大云均有专属部署。",
-        salesSalary: 160000, salaryDetail: "平均OTE在 13-18万欧元。本地销售机会大多面向欧盟政府机构、全球金融集团与跨国基金，薪资极高。",
+        cloudProviders: ["Schneider", "Siemens", "Huawei", "Enovos"],
+        cloudDetail: "欧盟绿能金融与跨境电力基础设施投资总部所在地，大客户销售主要面向投资基金与公用事业。",
+        salesSalary: 165000, salaryDetail: "平均OTE在 13-19万欧元。本地销售机会大多面向欧盟政府机构、全球新能源基金与大型公用事业，薪资极高。",
         weatherTemp: 9.5, weatherSun: 1600, weatherRain: 140,
         weatherDetail: "温带海洋性向大陆性过渡气候。全年温和但多雨雾，冬季阴冷，夏季平均气温在20-28度之间，十分舒爽。",
         safetyIndex: 66.0, safetyDetail: "社会极其安定。由于经济高度发达且警察效率高，社会秩序非常好，极其适合家庭安家。",
         transportIndex: 90, transportDetail: "卢森堡是全球首个实行【全国公共交通全免费】的国家！航空往返西欧各大都市非常便捷。",
         englishProficiency: 82, englishDetail: "多语种社会（法、德、卢森堡语）。商业和金融机构以英文为主，但日常市政登记、租房签约多以法语为主。",
-        youthCommunity: 72, youthDetail: "外籍人口占比过半，社交圈高度国际化，但多偏向于高净值金融/法律白领，社交文化较务实且商务化。"
+        youthCommunity: 72, youthDetail: "外籍人口占比过半，社交圈高度国际化，但多偏向于高净值金融/法律/能源白领，社交文化较商务化。"
       },
       {
         id: "estonia", name: "爱沙尼亚", enName: "Estonia", taxRate: 20.0,
         taxDetail: "全国实行20%扁平单一所得税率。首创电子居民计划，且企业利润若不分配则免企业所得税，非常适合创业者。",
         costOfLiving: 54, costDetail: "约 €1,300 - €1,800/月。日常物价较西欧有优势，但塔林房租随着科技人才涌入上涨明显。",
         annualLeave: 28, leaveDetail: "法定带薪年假为28个自然日。爱沙尼亚办事流程近100%数字化，日常带薪假期保障非常规范。",
-        cloudProviders: ["AWS", "Azure", "GCP"],
-        cloudDetail: "北欧数字化先锋。虽然由于体量核心Region大都在芬兰或瑞典，但三大云均在塔林有强力边缘云接入网。",
-        salesSalary: 75000, salaryDetail: "中级销售AE平均OTE约为 6.5-9.5万欧元。大量科技初创公司（如Bolt）将全球商务总部设在塔林。",
+        cloudProviders: ["Skeleton Tech", "Huawei", "Sungrow", "ABB"],
+        cloudDetail: "波罗的海数字电网与超级电容创新国（Skeleton）。100%政务数字化，数字能源软件销售发达。",
+        salesSalary: 80000, salaryDetail: "中级销售AE/BD平均OTE约为 6.5-10万欧元。大量科技初创公司将全球商务总部设在塔林。",
         weatherTemp: 6.0, weatherSun: 1700, weatherRain: 150,
         weatherDetail: "亚寒带气候。冬季漫长，大雪覆盖，白昼极短；夏季气温舒适，极昼明显，森林覆盖率高。",
         safetyIndex: 74.0, safetyDetail: "社会犯罪率极低。走在塔林中世纪古城或高新科技区都极度安全，人与人高度信任，治安高居北欧前列。",
         transportIndex: 80, transportDetail: "塔林为本地市民提供【完全免费的市政公共交通】。国际长途主要依赖赫尔辛基或斯德哥尔摩的航班与轮渡。",
         englishProficiency: 80, englishDetail: "政府数字化处于全球顶尖水平（e-Estonia），近乎100%的公共行政流程均有纯英文线上界面，基本无语言障碍。",
-        youthCommunity: 78, youthDetail: "塔林拥有浓郁的北欧硅谷创业氛围，年轻科技社群极其活跃，说英语的初创聚会和黑客松非常流行。"
+        youthCommunity: 78, youthDetail: "塔林拥有浓郁的北欧硅谷创业氛围，年轻科技与绿能社群极其活跃，说英语的初创聚会和黑客松非常流行。"
       },
-      // 新增 22 国，覆盖全欧
       {
         id: "iceland", name: "冰岛", enName: "Iceland", taxRate: 31.4,
         taxDetail: "实行地方市政税与联邦税，综合个人所得税在31-37%左右，社会福利体系高度完善。",
         costOfLiving: 85, costDetail: "生活开支极昂贵，几乎所有物资依赖进口，雷克雅未克房租和日常餐饮成本极高。",
         annualLeave: 24, leaveDetail: "法定年假24天。北欧特有的极佳福利，员工享有强大的工会保障与工作生活平衡。",
-        cloudProviders: ["AWS", "Azure", "GCP"],
-        cloudDetail: "由于电力低碳，建有许多绿色超级计算节点，主权云端和商业服务多由瑞典或爱尔兰Region覆盖。",
-        salesSalary: 105000, salaryDetail: "平均OTE约10.5万欧元。本地IT市场以渔业、绿色能源和旅游数字化为主。",
+        cloudProviders: ["Landsvirkjun", "ABB", "Siemens"],
+        cloudDetail: "100%地热与水力发电国。地热数字管理与绿能数据中心供电销售为主。",
+        salesSalary: 110000, salaryDetail: "平均OTE约11万欧元。本地IT与绿能市场以地热、绿色能源和旅游数字化为主。",
         weatherTemp: 4.0, weatherSun: 1300, weatherRain: 160,
         weatherDetail: "极地海洋性气候。夏季短促凉爽，冬季漫长阴暗但有暖流不至极寒，风力巨大，经常有极光。",
         safetyIndex: 78.0, safetyDetail: "全球安全指数第一名，几乎无任何恶性犯罪，治安和女性夜间出行安全感顶级。",
@@ -1704,27 +1710,27 @@
       },
       {
         id: "lithuania", name: "立陶宛", enName: "Lithuania", taxRate: 20.0,
-        taxDetail: "个税基本税率为20%，高收入部分为32%。提供金融科技创业税收优惠。",
-        costOfLiving: 48, costDetail: "约 €1,100 - €1,600/月。维尔纽斯房租和生活物价相比西欧十分便宜。",
+        taxDetail: "个税基本税率为20%，高收入部分为32%。提供金融科技与绿能初创税收优惠。",
+        costOfLiving: 48, costDetail: "约 €1,100 - €1,600/月. 维尔纽斯房租和生活物价相比西欧十分便宜。",
         annualLeave: 20, leaveDetail: "法定带薪假20天，公共假日13天，科技和外包行业普遍提供更优的休假条件。",
-        cloudProviders: ["AWS", "Azure", "GCP"],
-        cloudDetail: "波罗的海的金融科技领头羊，云巨头在维尔纽斯设有支持与开发团队，服务整个北欧和东欧。",
-        salesSalary: 68000, salaryDetail: "平均OTE约6.8万欧元。本地Fintech和外包公司的销售岗位性价比很高。",
+        cloudProviders: ["Ignitis", "Huawei", "Sungrow", "Schneider"],
+        cloudDetail: "波罗的海能源独立转型先锋，光伏与风储整合项目增加明显。",
+        salesSalary: 72000, salaryDetail: "平均OTE约7.2万欧元。本地Fintech和绿能软件公司的销售岗位性价比很高。",
         weatherTemp: 7.0, weatherSun: 1600, weatherRain: 140,
         weatherDetail: "温带大陆性气候。冬季寒冷阴沉并经常下雪，夏季温和明朗（18-25°C）。",
         safetyIndex: 66.0, safetyDetail: "治安状况优良，犯罪率低，维尔纽斯市区夜间出行十分安定无忧。",
         transportIndex: 76, transportDetail: "有完善的城际巴士和铁路连接里加与华沙，国际航班主要通过维尔纽斯机场。",
         englishProficiency: 78, englishDetail: "高知青年一代英语通用度好，跨国企业工作完全使用英语，但去政府办事偶尔需要翻译支持。",
-        youthCommunity: 75, youthDetail: "金融科技与初创团队在这里非常活跃，年轻的外籍白领社交网络正在蓬勃发展。"
+        youthCommunity: 75, youthDetail: "金融科技与绿能初创团队在这里非常活跃，年轻的外籍白领社交网络正在蓬勃发展。"
       },
       {
         id: "latvia", name: "拉脱维亚", enName: "Latvia", taxRate: 23.0,
         taxDetail: "实行 20%-31% 累进税率，社保福利完善。对高新技术人才有一定的税收申报便利度。",
         costOfLiving: 47, costDetail: "日常消费和房租非常划算，里加的生活成本比西欧主要都市低 40% 以上。",
         annualLeave: 20, leaveDetail: "法定带薪年假为20天。北欧式慢节奏生活方式，假期和加班保障都相当规范。",
-        cloudProviders: ["AWS", "Azure", "GCP"],
-        cloudDetail: "波罗的海的电信核心区。三大云厂商在拉脱维亚提供强力云互联网络，云项目外包市场发展迅速。",
-        salesSalary: 60000, salaryDetail: "平均OTE约6万欧元。大部分云销售 AE 岗位主要负责波罗的海三国的本地企业上云业务。",
+        cloudProviders: ["Latvenergo", "Huawei", "Sungrow"],
+        cloudDetail: "水电与区域分布式光伏管理，销售以波罗的海三国大客户为主。",
+        salesSalary: 65000, salaryDetail: "平均OTE约6.5万欧元。大部分销售岗位主要负责波罗的海三国的本地企业绿能与数字化上云业务。",
         weatherTemp: 6.5, weatherSun: 1600, weatherRain: 140,
         weatherDetail: "温带海洋性向大陆性过渡气候。冬季寒冷阴沉，夏季温和湿润，常有降水。",
         safetyIndex: 62.0, safetyDetail: "里加和全国治安环境非常安定，居民友善，夜间出行基本没有任何安全顾虑。",
@@ -1737,24 +1743,24 @@
         taxDetail: "所得税为10%扁平单一税率，是欧盟税率最低的国家之一，非常适合低税负生活。",
         costOfLiving: 39, costDetail: "生活开支极其廉价，索非亚的房租和日常开销仅为伦敦/巴黎的三分之一左右。",
         annualLeave: 20, leaveDetail: "法定带薪年假为20天，休假保障健全，科技外包企业普遍提供额外假期福利。",
-        cloudProviders: ["AWS", "Azure", "GCP"],
-        cloudDetail: "作为东南欧科技外包交付中心，主要提供对西欧的离岸云架构咨询与客户支持团队服务。",
-        salesSalary: 45000, salaryDetail: "平均OTE约4.5万欧元。低税率和超低物价使得实际购买力在东欧首屈一指。",
+        cloudProviders: ["Huawei", "Sungrow", "Schneider"],
+        cloudDetail: "东南欧大型地面光伏与储能开发热土，10%低税率吸引不少离岸技术与销售团队。",
+        salesSalary: 52000, salaryDetail: "平均OTE约5.2万欧元。低税率和超低物价使得实际购买力在东欧首屈一指。",
         weatherTemp: 10.5, weatherSun: 2100, weatherRain: 90,
         weatherDetail: "温带大陆性气候。夏季炎热干燥且阳光明媚，冬季寒冷多雪，滑雪资源十分丰富。",
         safetyIndex: 61.0, safetyDetail: "社会治安良好。大城市索非亚相对安全，部分旅游景区和口岸需警惕小偷小摸。",
         transportIndex: 68, transportDetail: "索非亚拥有完善的地铁网络，有国际航班连接欧洲各大城市。铁路网络发展相对较慢。",
         englishProficiency: 64, englishDetail: "科技和外包行业白领英语极佳，日常生活可通用英语，但政府行政部门完全使用保加利亚语。",
-        youthCommunity: 70, youthDetail: "索非亚由于超低税率吸引了大量欧洲年轻IT白领和数字游民，社交氛围较具活力。"
+        youthCommunity: 70, youthDetail: "索非亚由于超低税率吸引了大量欧洲年轻IT/绿能白领和数字游民，社交氛围较具活力。"
       },
       {
         id: "croatia", name: "克罗地亚", enName: "Croatia", taxRate: 20.0,
         taxDetail: "所得税根据城市和收入实行两档累进（通常在20%-30%左右），对数码游民提供免税签证优惠。",
         costOfLiving: 48, costDetail: "生活性价比较高，萨格勒布和海滨城市的餐饮和租房成本适中，夏天旅游季海滨物价上涨。",
         annualLeave: 20, leaveDetail: "法定带薪年假为20天。拥有极强的南欧休假文化，夏季度假气氛非常浓郁。",
-        cloudProviders: ["AWS", "Azure", "GCP"],
-        cloudDetail: "主要作为亚德里亚海区域的云业务枢纽，云巨头在此多通过本地合作伙伴服务政府和旅游业。",
-        salesSalary: 52000, salaryDetail: "平均OTE约5.2万欧元。本地销售团队通常覆盖克罗地亚及巴尔干地区业务。",
+        cloudProviders: ["Končar", "Huawei", "Sungrow", "Siemens"],
+        cloudDetail: "亚德里亚海岛屿微电网与旅游业绿能化，萨格勒布为巴尔干新能源枢纽。",
+        salesSalary: 58000, salaryDetail: "平均OTE约5.8万欧元。本地销售团队通常覆盖克罗地亚及巴尔干地区业务。",
         weatherTemp: 12.0, weatherSun: 2300, weatherRain: 110,
         weatherDetail: "沿海地中海气候，内陆温带大陆性气候。夏季阳光灿烂（年日照2300h），冬季温和。",
         safetyIndex: 73.0, safetyDetail: "社会秩序极其和平安定。暴力犯罪极其罕见，即使深夜独自在海边或城区散步也极安全。",
@@ -1767,24 +1773,24 @@
         taxDetail: "所得税率分为19%和25%两档。社会分摊金体系健全，综合税负在欧盟处于中游水平。",
         costOfLiving: 46, costDetail: "约 €1,100 - €1,700/月。布拉迪斯拉发生活开销适中，紧邻维也纳可共享部分高端资源。",
         annualLeave: 20, leaveDetail: "法定带薪假20天，33岁以上或已育员工可获得25天，社会节假日相对较多。",
-        cloudProviders: ["AWS", "Azure", "GCP"],
-        cloudDetail: "作为西欧制造业和汽车工业的后勤技术重镇，本地云巨头多提供制造数字化云解决方案。",
-        salesSalary: 58000, salaryDetail: "平均OTE约5.8万欧元。本地职位多与跨国共享服务中心（SSC）的售后及支持销售相关。",
+        cloudProviders: ["Siemens", "Schneider", "Huawei", "Sungrow"],
+        cloudDetail: "汽车超级工厂云集，工业绿色配电与储能数字化销售稳定。",
+        salesSalary: 65000, salaryDetail: "平均OTE约6.5万欧元。本地职位多与跨国共享服务中心（SSC）的售后及支持销售相关。",
         weatherTemp: 9.0, weatherSun: 1700, weatherRain: 120,
         weatherDetail: "温带大陆性气候。四季分明，夏季温暖宜人（20-28°C），冬季阴冷常降雪。",
         safetyIndex: 68.0, safetyDetail: "整体社会治安极其良好，犯罪率低，布拉迪斯拉发属于宁静安全的首都城市。",
         transportIndex: 78, transportDetail: "布拉迪斯拉发火车1小时直达维也纳，两个首都间往来极其频繁，机场航班网络中等。",
         englishProficiency: 62, englishDetail: "跨国企业内英文通用度高，年轻一代口语水平良好，去政府办事偶有语言沟通摩擦。",
-        youthCommunity: 70, youthDetail: "由于距离维也纳仅一小时车程，年轻的跨国科技和金融从业人员往来两地社交频繁。"
+        youthCommunity: 70, youthDetail: "由于距离维也纳仅一小时车程，年轻的跨国科技和新能源从业人员往来两地社交频繁。"
       },
       {
         id: "slovenia", name: "斯洛文尼亚", enName: "Slovenia", taxRate: 27.0,
         taxDetail: "累进所得税率最高达50%，社保分摊比例较高。但相对应的，其社会公共福利极其优秀。",
         costOfLiving: 53, costDetail: "生活成本在东欧国家中偏高，卢布尔雅那房租偏贵，但自然环境和农产品性价比极佳。",
         annualLeave: 20, leaveDetail: "法定带薪假20天，休假和劳动保护法律极严格，崇尚健康和谐的工作生活方式。",
-        cloudProviders: ["AWS", "Azure", "GCP"],
-        cloudDetail: "主要由三大云厂商奥地利或意大利Region进行云端辐射，本地初创企业和绿色能源云化发展迅速。",
-        salesSalary: 65000, salaryDetail: "平均OTE约6.5万欧元。薪酬水准和可支配收入在中东欧地区名列前茅。",
+        cloudProviders: ["GEN-I", "Huawei", "Sungrow", "Fronius"],
+        cloudDetail: "绿能高普及率国，家庭与工商业光储充数字化管理渗透率高。",
+        salesSalary: 70000, salaryDetail: "平均OTE约7万欧元。薪酬水准和可支配收入在中东欧地区名列前茅。",
         weatherTemp: 9.5, weatherSun: 1900, weatherRain: 130,
         weatherDetail: "多样的山地与地中海过渡气候。夏季阳光充足，冬季积雪深厚，森林覆盖率达60%。",
         safetyIndex: 77.0, safetyDetail: "全球最安全的国家之一。暴力犯罪几乎绝迹，城市环境极其干净整洁，安全感极强。",
@@ -1797,39 +1803,39 @@
         taxDetail: "所得税最高35%。但通过“外国受控公司”或特定居住政策，可获得大幅税收返还和抵扣优惠。",
         costOfLiving: 62, costDetail: "约 €1,500 - €2,200/月。作为一个岛国，淡水和进口商品偏贵，租房性价比随地段波动大。",
         annualLeave: 24, leaveDetail: "法定年假24天。享有极佳的地中海式工作节奏，社会福利和带薪假执行非常规范。",
-        cloudProviders: ["AWS", "Azure", "GCP"],
-        cloudDetail: "地中海金融和博彩云服务核心。对高并发网络、跨境主权和数据加密有极高云合规需求。",
-        salesSalary: 72000, salaryDetail: "平均OTE约7.2万欧元。大部分云销售 AE 岗位与跨境博彩、在线支付及加密货币云化相关。",
+        cloudProviders: ["Huawei", "Schneider", "Enel"],
+        cloudDetail: "地中海岛国屋顶光伏与智能微电网，英文普及率100%。",
+        salesSalary: 75000, salaryDetail: "平均OTE约7.5万欧元。大部分销售岗位与新能源大客户及数字基础设施相关。",
         weatherTemp: 19.0, weatherSun: 3000, weatherRain: 60,
         weatherDetail: "典型地中海气候。年日照超3000小时，夏季阳光暴晒（28-36°C），冬季温和（12-18°C）。",
         safetyIndex: 60.0, safetyDetail: "治安状况优良。岛民性格热情友善，社会治安非常和平安定，但在游客区需注意扒手。",
         transportIndex: 70, transportDetail: "出行主要依赖公交车、出租车和私家车，无轨道交通。马耳他国际机场航线遍布全欧。",
         englishProficiency: 90, englishDetail: "英语是官方语言，所有政府文件、报税及日常生活100%纯英文，无任何语言融入壁垒。",
-        youthCommunity: 85, youthDetail: "欧洲博彩与数字金融青年中心，拥有极密集的英语青年社区与沙滩、潜水及帆船社交活动。"
+        youthCommunity: 85, youthDetail: "欧洲数字金融与绿能青年中心，拥有极密集的英语青年社区与沙滩、潜水及帆船社交活动。"
       },
       {
         id: "cyprus", name: "塞浦路斯", enName: "Cyprus", taxRate: 20.0,
         taxDetail: "所得税率分为多档，前1.95万欧元免税，最高税率35%。非主籍税收政策（Non-Dom）对高管和股东极其优惠。",
-        costOfLiving: 56, costDetail: "物价水平温和。餐饮和海鲜便宜，利马索尔和尼科西亚的房租随着科技外包入驻有所上涨。",
+        costOfLiving: 56, costDetail: "物价水平温和。餐饮和海鲜便宜，利马索尔和尼科西亚的房租随着科技/新能源企业入驻有所上涨。",
         annualLeave: 20, leaveDetail: "法定带薪假20天。假期执行严格，地中海午休和夏休休假氛围极为浓郁。",
-        cloudProviders: ["AWS", "Azure", "GCP"],
-        cloudDetail: "东南欧及中东的科技过境枢纽。大型在线交易、航运及外汇平台云化需求极高，三大云均设网络PoP点。",
-        salesSalary: 65000, salaryDetail: "平均OTE约6.5万欧元。利马索尔聚集了大量外包及软件公司的销售团队，税后可支配资产多。",
+        cloudProviders: ["Huawei", "Sungrow", "SolarEdge"],
+        cloudDetail: "地中海超高阳光日照，商业储能与光伏自发自用市场活跃。",
+        salesSalary: 70000, salaryDetail: "平均OTE约7万欧元。利马索尔聚集了大量外包及软件/绿能公司的销售团队，税后可支配资产多。",
         weatherTemp: 19.5, weatherSun: 3200, weatherRain: 50,
         weatherDetail: "地中海气候。全欧洲阳光最明媚的地方（年日照3200h），夏季炎热（30-38°C），冬季极为舒适。",
         safetyIndex: 68.0, safetyDetail: "非常安定和平。居民社区紧密，暴力犯罪极少，小城镇几乎夜不闭户，女性出行很有安全感。",
         transportIndex: 66, transportDetail: "出行依赖汽车，国内无铁路。拉纳卡和帕福斯两大机场有密集的欧洲与中东国际航班连接。",
         englishProficiency: 80, englishDetail: "曾为英国殖民地，英语普及率极高，法律、商业合同及政务服务全面支持纯英文沟通。",
-        youthCommunity: 82, youthDetail: "利马索尔近年转型为“塞浦路斯硅谷”，聚集了大量外籍程序员与销售，海滩社交和游艇生活丰富。"
+        youthCommunity: 82, youthDetail: "利马索尔近年转型为“塞浦路斯科技/绿能谷”，聚集了大量外籍工程师与销售，海滩社交和游艇生活丰富。"
       },
       {
         id: "liechtenstein", name: "列支敦士登", enName: "Liechtenstein", taxRate: 12.0,
         taxDetail: "个税综合负担在10-15%左右，是全球著名的避税天堂，但长居名额极难获得。",
         costOfLiving: 105, costDetail: "物价极昂贵，与瑞士苏黎世同等水平，日常消费和租房价格非常昂贵。",
         annualLeave: 20, leaveDetail: "法定年假20天，假期执行严格，劳动法保护非常完善，工作节奏注重德语区的严谨与高WLB。",
-        cloudProviders: ["AWS", "Swisscom"],
-        cloudDetail: "主要由瑞士苏黎世的数据中心Region进行云端辐射，本地云服务多专注于私人银行和信托合规。",
-        salesSalary: 170000, salaryDetail: "平均OTE达17万等值欧元。由于高薪资和极低税率，实际储蓄能力在欧洲名列前茅。",
+        cloudProviders: ["ABB", "Siemens", "Fronius"],
+        cloudDetail: "结合瑞士高端工业与绿能基金，销售薪资极高。",
+        salesSalary: 175000, salaryDetail: "平均OTE达17.5万等值欧元。由于高薪资和极低税率，实际储蓄能力在欧洲名列前茅。",
         weatherTemp: 9.0, weatherSun: 1600, weatherRain: 120,
         weatherDetail: "阿尔卑斯山地气候。夏季温暖（18-26°C），冬季寒冷常降雪，山地风光秀丽。",
         safetyIndex: 80.0, safetyDetail: "几乎零犯罪率，社会极度富裕且平静，治安水准全球顶级，夜间出行没有任何顾虑。",
@@ -1840,11 +1846,11 @@
       {
         id: "monaco", name: "摩纳哥", enName: "Monaco", taxRate: 0.0,
         taxDetail: "免征个人所得税（法国籍居民除外），资产收益和遗产税政策极其优惠，高净值人士避税首选。",
-        costOfLiving: 120, costDetail: "物价极其昂贵，房价和租金位列全球最贵铁队，日常高档餐饮和娱乐消费水准极高。",
+        costOfLiving: 120, costDetail: "物价极其昂贵，房价和租金位列全球最贵梯队，日常高档餐饮和娱乐消费水准极高。",
         annualLeave: 25, leaveDetail: "法定年假为30个自然日。注重高品质休闲生活，夏休和高尔夫、游艇度假在富豪圈层中非常普遍。",
-        cloudProviders: ["AWS", "Azure", "GCP"],
-        cloudDetail: "主权和隐私云的极致要求。多由蔚蓝海岸区域的高速节点与法国巴黎/马赛的 Region 互联服务金融与游艇产业。",
-        salesSalary: 150000, salaryDetail: "销售OTE约15万欧元。本地岗位大多与奢侈品定制、高端财富管理和游艇产业云化相关。",
+        cloudProviders: ["Schneider", "Siemens"],
+        cloudDetail: "游艇码头绿色供能与奢华建筑微电网，0%个税。",
+        salesSalary: 155000, salaryDetail: "销售OTE约15.5万欧元。本地岗位大多与奢侈品定制、高端财富管理和游艇产业绿色微电网相关。",
         weatherTemp: 16.0, weatherSun: 2600, weatherRain: 70,
         weatherDetail: "纯正的地中海气候。夏季温暖干燥，冬季温和多阳光（年日照2600h），海景优美。",
         safetyIndex: 85.0, safetyDetail: "全球摄像头最密集的安全之国。街头警力极其充足，几乎没有任何偷盗或暴力犯罪，夜间安全感顶级。",
@@ -1857,9 +1863,9 @@
         taxDetail: "个税封顶仅为10%，无资本利得税和遗产税，增值税（VAT）仅为4.5%，全欧最低之一。",
         costOfLiving: 54, costDetail: "由于是免税国，烟酒、电子产品、护肤品等极其便宜，租房和日常餐饮成本温和。",
         annualLeave: 20, leaveDetail: "法定年假20天，滑雪季和夏季度假氛围极佳。",
-        cloudProviders: ["AWS"],
-        cloudDetail: "主要由巴塞罗那或马德里Region辐射，本地云服务以滑雪旅游和跨境电商免税零售云化为主。",
-        salesSalary: 70000, salaryDetail: "平均OTE约7万欧元。结合超低个税，可支配资产比西班牙本地同类岗位高出许多。",
+        cloudProviders: ["Schneider", "Fronius"],
+        cloudDetail: "山地滑雪度假区数字微电网与免税环境。",
+        salesSalary: 75000, salaryDetail: "平均OTE约7.5万欧元。结合超低个税，可支配资产比西班牙本地同类岗位高出许多。",
         weatherTemp: 11.0, weatherSun: 2400, weatherRain: 90,
         weatherDetail: "阿尔卑斯山山地气候。夏季干爽温暖，冬季严寒，雪量极大，是欧洲著名的滑雪避暑胜地。",
         safetyIndex: 88.0, safetyDetail: "社会治安极其优越。几乎没有暴力犯罪，小偷极少，社会环境对于单身女性非常安全友好。",
@@ -1872,9 +1878,9 @@
         taxDetail: "所得税综合负担约15-19%左右，相较邻国意大利有显著的税收优惠政策。",
         costOfLiving: 56, costDetail: "与意大利中北部相当。餐饮和日常物价比较温和，由于不收关税，部分免税零售品很划算。",
         annualLeave: 20, leaveDetail: "法定带薪假20天，假期执行规范，生活节奏偏慢，受意大利式的浪漫悠闲度假文化影响深远。",
-        cloudProviders: ["AWS"],
-        cloudDetail: "主要由意大利米兰的 Region 提供网络和云辐射，本地云业务规模非常有限。",
-        salesSalary: 65000, salaryDetail: "平均OTE约6.5万欧元。销售岗位极其有限，多面向本地免税贸易和旅游服务业。",
+        cloudProviders: ["Enel", "Siemens"],
+        cloudDetail: "连接意大利中北部绿色电网与商业光伏管理。",
+        salesSalary: 68000, salaryDetail: "平均OTE约6.8万欧元。销售岗位多面向本地免税贸易和商业能源服务业。",
         weatherTemp: 14.0, weatherSun: 2100, weatherRain: 80,
         weatherDetail: "温带地中海气候。夏季炎热多阳光，冬季温和湿润。地处山丘之上，视野极其开阔。",
         safetyIndex: 82.0, safetyDetail: "社会秩序极其和平安定。暴力犯罪几乎为零，治安在整个南欧都名列前茅。",
@@ -1887,9 +1893,9 @@
         taxDetail: "免个人所得税。境内没有个人税收负担，但一般人无法获得居留权或在此工作。",
         costOfLiving: 60, costDetail: "生活支出基本等同于意大利罗马。住房主要由教廷提供或在罗马市租房。",
         annualLeave: 20, leaveDetail: "法定假20天。工作以教廷行政、博物馆和宗教事务为主，休假和周日礼拜具有浓厚宗教特色。",
-        cloudProviders: ["AWS"],
-        cloudDetail: "拥有专属的教廷机密数据备份与主权云服务，与意大利罗马和米兰的超算中心实现直连。",
-        salesSalary: 50000, salaryDetail: "平均OTE约5万欧元。基本不存在普通的商业云销售岗位，薪酬主要为教廷技术雇员标准津贴。",
+        cloudProviders: ["Siemens"],
+        cloudDetail: "教廷建筑屋顶太阳能与绿色电力数字化管理。",
+        salesSalary: 52000, salaryDetail: "平均OTE约5.2万欧元。主要为教廷绿能与设施管理技术雇员标准津贴。",
         weatherTemp: 15.5, weatherSun: 2200, weatherRain: 80,
         weatherDetail: "典型的地中海气候。夏季炎热干燥，冬季温暖多雨，气候与罗马市完全一致。",
         safetyIndex: 70.0, safetyDetail: "有著名的瑞士卫队与梵蒂冈警察，社会秩序极好。博物馆周边需防小偷。",
@@ -1899,72 +1905,72 @@
       },
       {
         id: "ukraine", name: "乌克兰", enName: "Ukraine", taxRate: 19.5,
-        taxDetail: "所得税为18%单一税率，附加1.5%军事税。本地IT常通过单人企业享受5%的个税优惠。",
+        taxDetail: "所得税为18%单一税率，附加1.5%军事税。本地科技/绿能从业人员常享受税收优惠。",
         costOfLiving: 35, costDetail: "在欧洲属于生活开支最低阶梯。租房、日常餐饮和超市物价折算欧元后极其便宜。",
-        annualLeave: 24, leaveDetail: "法定带薪假24天。科技和外包白领普遍享有弹性工时和带薪假期。",
-        cloudProviders: ["AWS", "Azure", "GCP"],
-        cloudDetail: "云和主权数据正加速向西欧和波兰Region迁移，本地以政务云安全化及高防护分布式网络为主。",
-        salesSalary: 40000, salaryDetail: "平均OTE约4万欧元。主要面向跨国IT交付、政府国防云及战后重建云项目的销售谈判。",
+        annualLeave: 24, leaveDetail: "法定带薪假24天。科技与工程白领普遍享有弹性工时和带薪假期。",
+        cloudProviders: ["Huawei", "Sungrow", "Schneider"],
+        cloudDetail: "分布式光伏与独立储能系统在电网韧性重建中需求极强。",
+        salesSalary: 45000, salaryDetail: "平均OTE约4.5万欧元。主要面向分布式能源系统及战后绿能重建项目的销售与谈判。",
         weatherTemp: 8.0, weatherSun: 1700, weatherRain: 110,
         weatherDetail: "温带大陆性气候。冬季寒冷多雪（零下5到15度），夏季温暖明朗，降雨分布适中。",
         safetyIndex: 30.0, safetyDetail: "受目前地缘政治冲突影响，整体安全指数较低，不推荐作为目前常规的国际移居目的地。",
         transportIndex: 70, transportDetail: "空域目前关闭，国内交通依赖极其发达的乌克兰国铁（UZ），连接基辅与周边波兰等国。",
-        englishProficiency: 55, englishDetail: "IT白领和高知群体英语普及率高，日常社交可用英语，但官方文件和普通生活必须使用乌克兰语。",
-        youthCommunity: 62, youthDetail: "基辅曾是著名的技术黑客与创意青年中心，目前社交社群多以志愿服务、科技黑客松为主。"
+        englishProficiency: 55, englishDetail: "白领和高知群体英语普及率高，日常社交可用英语，但官方文件和普通生活必须使用乌克兰语。",
+        youthCommunity: 62, youthDetail: "基辅曾是著名的技术与创意青年中心，目前社交社群多以志愿服务、科技黑客松为主。"
       },
       {
         id: "belarus", name: "白俄罗斯", enName: "Belarus", taxRate: 13.0,
         taxDetail: "实行13%扁平个税税率。针对高科技园的白领曾经有税收免除或降低政策。",
         costOfLiving: 36, costDetail: "生活物价偏低，明斯克的房租和日常开支折算后非常便宜，消费压力较小。",
-        annualLeave: 24, leaveDetail: "法定带薪假24天。休假保障和劳动合同制度相对规范，企业普遍提供带薪年假。",
-        cloudProviders: ["AWS", "Azure"],
-        cloudDetail: "云服务多以本土IDC和俄系云服务为主，三大公有云的本地市场份额由于制裁大幅受限。",
-        salesSalary: 35000, salaryDetail: "平均OTE约3.5万欧元。云销售市场较为封闭，主要为本地和区域白俄电信企业提供私有云方案。",
+        annualLeave: 24, leaveDetail: "法定带薪假24天。日常带薪假期保障非常规范，企业普遍提供带薪年假。",
+        cloudProviders: ["Huawei", "Schneider"],
+        cloudDetail: "工业配电与基础能源管理。",
+        salesSalary: 38000, salaryDetail: "平均OTE约3.8万欧元。主要为本地和区域工业企业提供电气化与配电方案。",
         weatherTemp: 6.5, weatherSun: 1500, weatherRain: 130,
         weatherDetail: "温带大陆性气候。冬季漫长、冰冷多雪，夏季温暖湿润，森林和湖泊资源丰富。",
         safetyIndex: 65.0, safetyDetail: "暴力犯罪率较低，街头巡逻警力充足。但整体安全指数受地缘政治及边境局势影响。",
         transportIndex: 72, transportDetail: "明斯克地铁网络便利，但受制裁影响，往返西欧和欧盟国家的国际航班和陆路口岸多有受限。",
-        englishProficiency: 50, englishDetail: "英语普及率较低，仅在高技术IT圈内通用，政府部门和日常生活完全使用俄语或白俄罗斯语。",
-        youthCommunity: 55, youthDetail: "年轻IT圈子相对集中在明斯克高科技园，但整体国际化社交因外部封锁受到一定阻碍。"
+        englishProficiency: 50, englishDetail: "英语普及率较低，仅在高技术圈内通用，政府部门和日常生活完全使用俄语或白俄罗斯语。",
+        youthCommunity: 55, youthDetail: "年轻白领相对集中在明斯克，但整体国际化社交因外部封锁受到一定阻碍。"
       },
       {
         id: "moldova", name: "摩尔多瓦", enName: "Moldova", taxRate: 12.0,
-        taxDetail: "所得税为12%扁平单一税率，IT园区（MITP）的企业和员工享有更低的统一综合个税优惠政策。",
+        taxDetail: "所得税为12%扁平单一税率，IT与绿能园区的企业和员工享有更低的统一综合个税优惠政策。",
         costOfLiving: 35, costDetail: "欧洲生活成本最低的国家之一，基希讷乌的餐饮、公车和租房价格在欧洲极具性价比。",
         annualLeave: 28, leaveDetail: "法定带薪假达28天。假期政策受到严格保护，外包科技公司员工普遍享有完整的休假假期。",
-        cloudProviders: ["AWS"],
-        cloudDetail: "主要由三大云厂商罗马尼亚（布加勒斯特）Region提供网络辐射，本地以企业数字化和基础网络云化为主。",
-        salesSalary: 30000, salaryDetail: "平均OTE约3万欧元。薪酬绝对值偏低，但得益于极低生活开销，本地白领基本开支无压力。",
+        cloudProviders: ["Huawei", "Sungrow"],
+        cloudDetail: "加速从外部能源依赖向本土分布式光伏转型。",
+        salesSalary: 35000, salaryDetail: "平均OTE约3.5万欧元。薪酬绝对值偏低，但得益于极低生活开销，本地白领基本开支无压力。",
         weatherTemp: 9.5, weatherSun: 2000, weatherRain: 90,
         weatherDetail: "温带大陆性气候。夏季温暖少雨，阳光充足，冬季寒冷，全国是著名的葡萄酒产区。",
         safetyIndex: 58.0, safetyDetail: "整体治安良好，恶性案件少。基希讷乌夜间走动无碍，但部分老街区需警惕扒手。",
         transportIndex: 60, transportDetail: "公共交通主要依赖小巴和公交车。基希讷乌国际机场航线主要连接东欧和中欧主要城市。",
-        englishProficiency: 50, englishDetail: "英语仅限年轻人和IT白领圈内通用，政府机关和日常零售完全使用罗马尼亚语或俄语。",
-        youthCommunity: 50, youthDetail: "外籍青年较少，年轻社区主要围绕红酒庄文化、农业科技以及IT园区外包团队的小范围社交。"
+        englishProficiency: 50, englishDetail: "英语仅限年轻人和白领圈内通用，政府机关和日常零售完全使用罗马尼亚语或俄语。",
+        youthCommunity: 50, youthDetail: "外籍青年较少，年轻社区主要围绕红酒庄文化、农业科技以及本地团队的小范围社交。"
       },
       {
         id: "serbia", name: "塞尔维亚", enName: "Serbia", taxRate: 15.0,
         taxDetail: "个税基本税率为10%-15%，对高新技术外籍员工提供特定的个税减免政策。",
         costOfLiving: 43, costDetail: "性价比极高，贝尔格莱德的房租和日常开支约是西欧大都市的二分之一，日常餐饮非常便宜。",
         annualLeave: 20, leaveDetail: "法定带薪假20天。巴尔干慢节奏生活节奏，夏天和冬季度假在社会上被高度看重。",
-        cloudProviders: ["AWS", "Azure", "GCP"],
-        cloudDetail: "巴尔干地区的云技术中心。三大云厂商在贝尔格莱德设立有本地分支，面向东欧进行云技术辐射。",
-        salesSalary: 48000, salaryDetail: "平均OTE约4.8万欧元。本地AE主要负责巴尔干半岛的云服务销售与大企业数字化上云。",
+        cloudProviders: ["Huawei", "Sungrow", "Siemens"],
+        cloudDetail: "巴尔干新能源重镇，风电与光伏大储能项目增加。",
+        salesSalary: 52000, salaryDetail: "平均OTE约5.2万欧元。本地AE/BD主要负责巴尔干半岛的数字能源设备销售与大项目谈判。",
         weatherTemp: 11.5, weatherSun: 2000, weatherRain: 100,
         weatherDetail: "温带大陆性气候。夏季炎热多阳光，冬季寒冷降雪多，春秋季气温宜人。",
         safetyIndex: 62.0, safetyDetail: "社会治安优良。贝尔格莱德等大城市夜间治安非常好，居民热情大度，对外国游客非常友善。",
         transportIndex: 72, transportDetail: "有高速公路连接西欧。贝尔格莱德机场为巴尔干重要航空港，飞往欧洲各大城市航班较丰富。",
         englishProficiency: 65, englishDetail: "塞尔维亚人英语普及率很高，年轻一代口语流利，日常生活和办事英语沟通无严重障碍。",
-        youthCommunity: 72, youthDetail: "贝尔格莱德以其无与伦比的夜生活和浮船俱乐部（Splavovi）闻名，年轻人的娱乐和社交活力四射。"
+        youthCommunity: 72, youthDetail: "贝尔格莱德以其无与伦比的夜生活和浮船俱乐部闻名，年轻人的娱乐和社交活力四射。"
       },
       {
         id: "bosnia", name: "波黑", enName: "Bosnia and Herzegovina", taxRate: 10.0,
         taxDetail: "所得税为10%扁平单一税率，是欧洲综合税负最低的区域之一，但地方政府架构及税收层级复杂。",
         costOfLiving: 40, costDetail: "在欧洲属于非常便宜的物价水平，萨拉热窝的日常消费、住宿和餐饮极具性价比。",
         annualLeave: 20, leaveDetail: "法定带薪假20天。当地居民生活节奏缓慢舒适，压力极低。",
-        cloudProviders: ["AWS"],
-        cloudDetail: "主要由邻国克罗地亚或奥地利 Region 覆盖，本地云项目以政府电子政务改造及旅游数字化为主。",
-        salesSalary: 38000, salaryDetail: "平均OTE约3.8万欧元。销售岗位多集中于本地电信运营商代理的云产品或本地软件服务商。",
+        cloudProviders: ["Huawei", "Sungrow"],
+        cloudDetail: "太阳能与水力资源开发，分布式新能源项目。",
+        salesSalary: 42000, salaryDetail: "平均OTE约4.2万欧元。销售岗位多集中于本地分布式光伏与电气设备代理。",
         weatherTemp: 10.5, weatherSun: 1900, weatherRain: 120,
         weatherDetail: "内陆温带大陆性向南部地中海气候过渡。冬季寒冷多雪，是著名的滑雪胜地。",
         safetyIndex: 58.0, safetyDetail: "治安状况基本良好，萨拉热窝市区走动安全，在老城区等游客密集地需留防盗窃小偷。",
@@ -1974,12 +1980,12 @@
       },
       {
         id: "albania", name: "阿尔巴尼亚", enName: "Albania", taxRate: 15.0,
-        taxDetail: "所得税税率累进最高至15%。对特定数码游民及创新IT企业提供有吸引力的税额折扣优惠。",
+        taxDetail: "所得税税率累进最高至15%。对特定数码游民及创新企业提供有吸引力的税额折扣优惠。",
         costOfLiving: 42, costDetail: "生活费用非常低廉，地中海沿海的房租和日常餐饮成本极低，堪称西欧退休和游民后花园。",
         annualLeave: 20, leaveDetail: "法定带薪假20天。休假文化盛行，生活步调极其闲散，居民注重个人生活和家庭聚餐。",
-        cloudProviders: ["AWS"],
-        cloudDetail: "云基建主要由希腊雅典或意大利 Region 提供，本地云生态处于爆发前期，以酒店旅游数字化为主。",
-        salesSalary: 35000, salaryDetail: "平均OTE约3.5万欧元。岗位以初创科技公司或外包远程客户支持（AE/Inside Sales）为主。",
+        cloudProviders: ["Huawei", "Sungrow"],
+        cloudDetail: "拥有近100%水力发电基础，正大力扩展光储一体化项目。",
+        salesSalary: 40000, salaryDetail: "平均OTE约4万欧元。岗位以区域光伏/储能销售及客户支持为主。",
         weatherTemp: 15.0, weatherSun: 2500, weatherRain: 100,
         weatherDetail: "典型的地中海气候。夏季阳光充足、炎热干燥（日照2500h），冬季非常温和多雨。",
         safetyIndex: 54.0, safetyDetail: "整体治安令人放心。国民对外国游客极其友好，暴力案件极少，走在城市街头很安定。",
@@ -1992,9 +1998,9 @@
         taxDetail: "个人所得税累进为9%-15%，对吸引外国专才和高管落户有强烈的优惠税率政策。",
         costOfLiving: 44, costDetail: "日常餐饮和消费性价比高。科托尔湾和波德戈里察的房租因游艇旅游业发展在夏日偏高。",
         annualLeave: 20, leaveDetail: "法定带薪假20天。假期执行严格，地中海度假和夏休文化根深蒂固，节奏悠闲。",
-        cloudProviders: ["AWS"],
-        cloudDetail: "主要由邻国塞尔维亚或希腊 Region 辐射，本地专注于加密货币、游艇及房地产资产管理云化。",
-        salesSalary: 40000, salaryDetail: "平均OTE约4万欧元。主要针对国际投资客和游艇俱乐部等高端客户群体的云软件销售。",
+        cloudProviders: ["Huawei", "Sungrow"],
+        cloudDetail: "亚德里亚海海岸光伏与绿色度假区基础设施。",
+        salesSalary: 45000, salaryDetail: "平均OTE约4.5万欧元。主要针对沿海度假区与高端不动产的绿能与储能销售。",
         weatherTemp: 15.5, weatherSun: 2400, weatherRain: 110,
         weatherDetail: "地中海气候与内陆山地气候结合。年日照充裕，夏季温暖干燥，冬季温和多降雨。",
         safetyIndex: 60.0, safetyDetail: "治安状况卓越，犯罪率低，海滨城镇夜间出行非常平静安全，居民友善开朗。",
@@ -2007,11 +2013,11 @@
         taxDetail: "所得税为10%扁平单一税率，是巴尔干地区综合税收负担最低的国家之一，个税申报极简。",
         costOfLiving: 38, costDetail: "在全欧属于最低成本档次。斯科普里的房租、日常食品和外出就餐花费非常廉价。",
         annualLeave: 20, leaveDetail: "法定带薪假20天。假期保障充分，工作生活界线明显，居民生活节奏平缓没有压迫感。",
-        cloudProviders: ["AWS"],
-        cloudDetail: "主要由希腊 Region 提供网络辐射，本地云服务市场规模极小，多为本地中小企业基础IT云化。",
-        salesSalary: 36000, salaryDetail: "平均OTE约3.6万欧元。销售岗位以本地软件外包服务或代理西欧云厂商的转售岗位为主。",
+        cloudProviders: ["Huawei", "Sungrow"],
+        cloudDetail: "煤电替代转型，推进大型地面光伏与储能。",
+        salesSalary: 40000, salaryDetail: "平均OTE约4万欧元。销售岗位以分布式光伏与绿能设备转售岗位为主。",
         weatherTemp: 11.5, weatherSun: 2100, weatherRain: 90,
-        weatherDetail: "温带大陆性向地中海过渡气候。夏季炎热漫长，冬季寒冷多雪，日照时间在巴尔干地区较充足。",
+        weatherDetail: "温带大陆性向地中海过渡气候。夏季炎热小雨，日照时间在巴尔干地区较充足。",
         safetyIndex: 60.0, safetyDetail: "社会治安基本良好，犯罪率低，斯科普里老城及各社区夜间出行相对安全。",
         transportIndex: 60, transportDetail: "国内无地铁网络，出行以巴士和私家车为主。斯科普里机场航班以欧洲低成本廉航连接为主。",
         englishProficiency: 58, englishDetail: "年轻人英语口语交流无障碍，高知圈内英语通用，但去政府办事和公立机构仍使用马其顿语。",
@@ -2034,7 +2040,7 @@
       updateWeights();
       renderTabPanes();
       renderTable(countryData);
-      initHeroCanvas(); // 初始化动态画布背景
+      initHeroCanvas();
     });
 
     // 1. 主题切换逻辑
@@ -2047,11 +2053,9 @@
         const newTheme = isDark ? 'light' : 'dark';
         document.body.setAttribute('data-theme', newTheme);
         
-        // 更新图标
         icon.setAttribute('data-lucide', newTheme === 'dark' ? 'sun' : 'moon');
         lucide.createIcons();
         
-        // 重新渲染雷达图
         if (radarChartObj) {
           updateRadarTheme(newTheme);
         }
@@ -2059,7 +2063,7 @@
     }
 
     function updateRadarTheme(theme) {
-      const textColor = theme === 'dark' ? '#9ca3af' : '#475569';
+      const textColor = theme === 'dark' ? '#9ca3af' : '#374151';
       const gridColor = theme === 'dark' ? 'rgba(255, 255, 255, 0.08)' : 'rgba(0, 0, 0, 0.08)';
       
       radarChartObj.options.scales.r.grid.color = gridColor;
@@ -2076,7 +2080,7 @@
       
       countryData.forEach((c, idx) => {
         const opt1 = new Option(c.name, c.id, idx === 0, idx === 0);
-        const opt2 = new Option(c.name, c.id, idx === 5, idx === 5); // 默认选德国和瑞士
+        const opt2 = new Option(c.name, c.id, idx === 3, idx === 3); // 默认选德国和荷兰
         select1.add(opt1);
         select2.add(opt2);
       });
@@ -2086,11 +2090,10 @@
     }
 
     function getRadarValues(country) {
-      // 归一化为0-10分，用于雷达图展现
       const taxScore = Math.max(0, Math.min(10, ((50 - country.taxRate) / 40) * 10));
       const costScore = Math.max(0, Math.min(10, ((120 - country.costOfLiving) / 85) * 10));
       const leaveScore = Math.max(0, Math.min(10, ((country.annualLeave - 15) / 20) * 10));
-      const salaryScore = Math.max(0, Math.min(10, ((country.salesSalary - 30000) / 170000) * 10));
+      const salaryScore = Math.max(0, Math.min(10, ((country.salesSalary - 30000) / 160000) * 10));
       const sunScore = Math.max(0, Math.min(10, ((country.weatherSun - 1000) / 2200) * 10));
       const safetyScore = country.safetyIndex / 10;
       const transportScore = country.transportIndex / 10;
@@ -2106,24 +2109,24 @@
       const c2 = countryData.find(c => c.id === document.getElementById('radarCountry2').value);
       
       const theme = document.body.getAttribute('data-theme');
-      const textColor = theme === 'dark' ? '#9ca3af' : '#475569';
+      const textColor = theme === 'dark' ? '#9ca3af' : '#374151';
       const gridColor = theme === 'dark' ? 'rgba(255, 255, 255, 0.08)' : 'rgba(0, 0, 0, 0.08)';
 
       radarChartObj = new Chart(ctx, {
         type: 'radar',
         data: {
-          labels: ['低所得税负担', '低生活成本', '带薪假期', '云服务销售薪资', '阳光气候度', '社会安全感', '交通便利度', '英语通用程度', '年轻社区密度'],
+          labels: ['低所得税负担', '低生活成本', '带薪假期', '数字能源销售薪资', '阳光气候度', '社会安全感', '交通便利度', '英语通用程度', '年轻社区密度'],
           datasets: [
             {
               label: c1.name,
               data: getRadarValues(c1),
               fill: true,
-              backgroundColor: 'rgba(99, 102, 241, 0.2)',
-              borderColor: '#6366f1',
-              pointBackgroundColor: '#6366f1',
+              backgroundColor: 'rgba(16, 185, 129, 0.2)',
+              borderColor: '#10b981',
+              pointBackgroundColor: '#10b981',
               pointBorderColor: '#fff',
               pointHoverBackgroundColor: '#fff',
-              pointHoverBorderColor: '#6366f1',
+              pointHoverBorderColor: '#10b981',
               borderWidth: 2
             },
             {
@@ -2203,22 +2206,17 @@
       radarChartObj.update();
     }
 
-    // Unified selection & smooth scroll handler
     function selectCountryAndScroll(countryId) {
       const country = countryData.find(c => c.id === countryId);
       if (!country) return;
       
       selectedDetailCountry = countryId;
       
-      // 更新气泡高亮
       document.querySelectorAll('.country-bubble').forEach(b => {
         b.classList.toggle('active', b.innerText === country.name);
       });
       
-      // 更新详情卡片
       renderDetailCard(country);
-      
-      // 平滑滚动到深度画像板块
       document.getElementById('detailPanelSection').scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
 
@@ -2250,22 +2248,22 @@
             <div class="title">${country.name}</div>
             <div class="en-title">${country.enName}</div>
           </div>
-          <div style="font-family: 'Outfit', sans-serif; font-weight: 700; color: #8b5cf6;">
-            综合实力评分: ${( (country.transportIndex + country.safetyIndex + Math.max(0, (100 - country.taxRate)) + (country.salesSalary/2000) + country.englishProficiency ) / 5).toFixed(0)}分
+          <div style="font-family: 'Outfit', sans-serif; font-weight: 700; color: #10b981;">
+            综合宜居评分: ${( (country.transportIndex + country.safetyIndex + Math.max(0, (100 - country.taxRate)) + (country.salesSalary/1800) + country.englishProficiency ) / 5).toFixed(0)}分
           </div>
         </div>
         <div class="detail-list">
           <div class="detail-item">
             <div class="detail-item-header">
               <span class="detail-item-header-left"><i data-lucide="percent" style="width: 14px; height: 14px;"></i> 所得税 & 假期</span>
-              <span style="color: #6366f1;">综合税率约 ${country.taxRate}% / 年假 ${country.annualLeave}天</span>
+              <span style="color: #10b981;">综合税率约 ${country.taxRate}% / 年假 ${country.annualLeave}天</span>
             </div>
             <p class="detail-item-desc">${country.taxDetail} ${country.leaveDetail}</p>
           </div>
           <div class="detail-item">
             <div class="detail-item-header">
-              <span class="detail-item-header-left"><i data-lucide="cloud" style="width: 14px; height: 14px;"></i> 云生态 & 均薪</span>
-              <span style="color: #10b981;">均薪 OTE €${(country.salesSalary/1000).toFixed(0)}k</span>
+              <span class="detail-item-header-left"><i data-lucide="zap" style="width: 14px; height: 14px;"></i> 数字能源生态 & 均薪</span>
+              <span style="color: #10b981;">销售 OTE €${(country.salesSalary/1000).toFixed(0)}k</span>
             </div>
             <div style="margin-top: 4px;">${cloudBadges}</div>
             <p class="detail-item-desc">${country.cloudDetail} ${country.salaryDetail}</p>
@@ -2273,14 +2271,14 @@
           <div class="detail-item">
             <div class="detail-item-header">
               <span class="detail-item-header-left"><i data-lucide="dollar-sign" style="width: 14px; height: 14px;"></i> 生活成本 & 治安</span>
-              <span style="color: #f97316;">成本指数 ${country.costOfLiving} / 安全指数 ${country.safetyIndex}</span>
+              <span style="color: #f59e0b;">成本指数 ${country.costOfLiving} / 安全指数 ${country.safetyIndex}</span>
             </div>
             <p class="detail-item-desc">${country.costDetail} 治安：${country.safetyDetail}</p>
           </div>
           <div class="detail-item">
             <div class="detail-item-header">
               <span class="detail-item-header-left"><i data-lucide="languages" style="width: 14px; height: 14px;"></i> 英语环境 & 年轻社区</span>
-              <span style="color: #a78bfa;">英语 ${country.englishProficiency} / 社区 ${country.youthCommunity}</span>
+              <span style="color: #34d399;">英语 ${country.englishProficiency} / 社区 ${country.youthCommunity}</span>
             </div>
             <p class="detail-item-desc"><strong>语言环境：</strong>${country.englishDetail} <strong>年轻社交：</strong>${country.youthDetail}</p>
           </div>
@@ -2325,11 +2323,10 @@
       }
 
       const results = countryData.map(c => {
-        // 归一化为百分制得分
         const sTax = Math.max(0, Math.min(100, ((50 - c.taxRate) / 40) * 100));
         const sCost = Math.max(0, Math.min(100, ((120 - c.costOfLiving) / 85) * 100));
         const sLeave = Math.max(0, Math.min(100, (c.annualLeave / 35) * 100));
-        const sSalary = Math.max(0, Math.min(100, (c.salesSalary / 200000) * 100));
+        const sSalary = Math.max(0, Math.min(100, (c.salesSalary / 190000) * 100));
         const sWeather = Math.max(0, Math.min(100, (c.weatherSun / 3300) * 100));
         const sSafety = c.safetyIndex;
         const sTransport = c.transportIndex;
@@ -2349,7 +2346,6 @@
         };
       });
 
-      // 降序排序
       results.sort((a, b) => b.score - a.score);
       renderMatches(results);
     }
@@ -2414,7 +2410,7 @@
               <div>
                 <div style="display:flex; justify-content:space-between; font-size:0.85rem; margin-bottom:4px;">
                   <span>所得税率</span>
-                  <span style="font-weight:600; color:#8b5cf6;">${c.taxRate}%</span>
+                  <span style="font-weight:600; color:#10b981;">${c.taxRate}%</span>
                 </div>
                 <div style="background:rgba(255,255,255,0.05); height:8px; border-radius:4px; overflow:hidden;">
                   <div style="background:var(--primary-gradient); height:100%; width:${c.taxRate * 2}%"></div>
@@ -2445,15 +2441,15 @@
             <div class="dimension-card-stats">
               <div>
                 <div style="display:flex; justify-content:space-between; font-size:0.85rem; margin-bottom:4px;">
-                  <span>云服务AE销售薪资 (OTE)</span>
+                  <span>数字能源销售年薪 (OTE)</span>
                   <span style="font-weight:600; color:#10b981;">€${(c.salesSalary/1000).toFixed(0)}k</span>
                 </div>
                 <div style="background:rgba(255,255,255,0.05); height:8px; border-radius:4px; overflow:hidden;">
-                  <div style="background:var(--success-gradient); height:100%; width:${(c.salesSalary/200000)*100}%"></div>
+                  <div style="background:var(--success-gradient); height:100%; width:${(c.salesSalary/190000)*100}%"></div>
                 </div>
               </div>
               <div style="margin-top: 5px;">
-                <div style="font-size:0.85rem; margin-bottom:4px; color: var(--text-secondary);">主要云基础设施：</div>
+                <div style="font-size:0.85rem; margin-bottom:4px; color: var(--text-secondary);">主要数字能源厂商：</div>
                 <div>${cloudBadges}</div>
               </div>
             </div>
@@ -2472,7 +2468,7 @@
               <div>
                 <div style="display:flex; justify-content:space-between; font-size:0.85rem; margin-bottom:4px;">
                   <span>生活成本指数 (纽约=100)</span>
-                  <span style="font-weight:600; color:#f97316;">${c.costOfLiving}</span>
+                  <span style="font-weight:600; color:#f59e0b;">${c.costOfLiving}</span>
                 </div>
                 <div style="background:rgba(255,255,255,0.05); height:8px; border-radius:4px; overflow:hidden;">
                   <div style="background:var(--accent-gradient); height:100%; width:${(c.costOfLiving/120)*100}%"></div>
@@ -2503,10 +2499,10 @@
               <div>
                 <div style="display:flex; justify-content:space-between; font-size:0.85rem; margin-bottom:4px;">
                   <span>平均晴天日照时间</span>
-                  <span style="font-weight:600; color:#eab308;">${c.weatherSun} 小时/年</span>
+                  <span style="font-weight:600; color:#f59e0b;">${c.weatherSun} 小时/年</span>
                 </div>
                 <div style="background:rgba(255,255,255,0.05); height:8px; border-radius:4px; overflow:hidden;">
-                  <div style="background: linear-gradient(90deg, #eab308, #f97316); height:100%; width:${(c.weatherSun/3300)*100}%"></div>
+                  <div style="background: linear-gradient(90deg, #f59e0b, #ef4444); height:100%; width:${(c.weatherSun/3300)*100}%"></div>
                 </div>
               </div>
               <div>
@@ -2534,7 +2530,7 @@
               <div>
                 <div style="display:flex; justify-content:space-between; font-size:0.85rem; margin-bottom:4px;">
                   <span>英语通用程度 (EPI)</span>
-                  <span style="font-weight:600; color:#8b5cf6;">${c.englishProficiency} / 100</span>
+                  <span style="font-weight:600; color:#10b981;">${c.englishProficiency} / 100</span>
                 </div>
                 <div style="background:rgba(255,255,255,0.05); height:8px; border-radius:4px; overflow:hidden;">
                   <div style="background:var(--primary-gradient); height:100%; width:${c.englishProficiency}%"></div>
@@ -2573,7 +2569,7 @@
             <td style="font-family:'Outfit'; font-weight:600;">${c.taxRate}%</td>
             <td style="font-family:'Outfit'; font-weight:600;">${c.costOfLiving}</td>
             <td style="font-family:'Outfit'; font-weight:600;">${c.annualLeave} 天</td>
-            <td><div style="display:flex; flex-wrap:wrap; max-width: 250px;">${cloudBadges}</div></td>
+            <td><div style="display:flex; flex-wrap:wrap; max-width: 260px;">${cloudBadges}</div></td>
             <td style="font-family:'Outfit'; font-weight:700; color:#10b981;">€${c.salesSalary.toLocaleString()}</td>
             <td style="font-family:'Outfit'; font-weight:600;">${c.weatherSun}h / ${c.weatherRain}天</td>
             <td style="font-family:'Outfit'; font-weight:600;">${c.safetyIndex}</td>
@@ -2636,7 +2632,7 @@
       renderTable(sorted);
     }
 
-    // 7. Banner 动态背景效果
+    // 7. Banner 动态背景效果 (粒子闪烁与能量网格)
     function initHeroCanvas() {
       const canvas = document.getElementById('heroCanvas');
       const ctx = canvas.getContext('2d');
@@ -2670,8 +2666,8 @@
         const isDark = document.body.getAttribute('data-theme') === 'dark';
         ctx.clearRect(0, 0, width, height);
         
-        const dotColor = isDark ? 'rgba(139, 92, 246, 0.45)' : 'rgba(99, 102, 241, 0.45)';
-        const lineColor = isDark ? 'rgba(6, 182, 212, 0.15)' : 'rgba(14, 165, 233, 0.12)';
+        const dotColor = isDark ? 'rgba(16, 185, 129, 0.45)' : 'rgba(5, 150, 105, 0.45)';
+        const lineColor = isDark ? 'rgba(52, 211, 153, 0.15)' : 'rgba(16, 185, 129, 0.12)';
         
         ctx.fillStyle = dotColor;
         ctx.strokeStyle = lineColor;
